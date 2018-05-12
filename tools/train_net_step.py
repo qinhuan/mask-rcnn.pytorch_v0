@@ -43,7 +43,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train a X-RCNN network')
 
     parser.add_argument(
-        '--dataset', dest='dataset', required=True,
+        '--dataset', dest='dataset',
         help='Dataset to use')
     parser.add_argument(
         '--suffix', dest='suffix',
@@ -158,8 +158,6 @@ def main():
     elif args.dataset == "coco2014_mini":
         cfg.TRAIN.DATASETS = ('coco_2014_minitrain',)
         cfg.MODEL.NUM_CLASSES = 81
-    else:
-        raise ValueError("Unexpected args.dataset: {}".format(args.dataset))
 
     cfg_from_file(args.cfg_file)
     if args.set_cfgs is not None:
@@ -358,9 +356,12 @@ def main():
                 dataiterator = iter(dataloader)
                 input_data = next(dataiterator)
 
-            for key in input_data:
-                if key != 'roidb': # roidb is a list of ndarrays with inconsistent length
-                    input_data[key] = list(map(Variable, input_data[key]))
+            if cfg.RPN.RPN_ON:
+                for key in input_data:
+                    if key != 'roidb': # roidb is a list of ndarrays with inconsistent length
+                        input_data[key] = list(map(Variable, input_data[key]))
+            else:
+                input_data['data'] = list(map(Variable, input_data['data']))
 
             training_stats.IterTic()
             net_outputs = maskRCNN(**input_data)

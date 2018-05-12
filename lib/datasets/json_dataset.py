@@ -330,8 +330,8 @@ class JsonDataset(object):
     ):
         """Add proposals from a proposals file to an roidb."""
         logger.info('Loading proposals from: {}'.format(proposal_file))
-        with open(proposal_file, 'r') as f:
-            proposals = pickle.load(f)
+        with open(proposal_file, 'rb') as f:
+            proposals = pickle.load(f, encoding='iso-8859-1')
         id_field = 'indexes' if 'indexes' in proposals else 'ids'  # compat fix
         _sort_proposals(proposals, id_field)
         box_list = []

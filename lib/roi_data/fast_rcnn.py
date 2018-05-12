@@ -121,6 +121,7 @@ def add_fast_rcnn_blobs(blobs, im_scales, roidb):
     for k, v in blobs.items():
         if isinstance(v, list) and len(v) > 0:
             blobs[k] = np.concatenate(v)
+
     # Add FPN multilevel training RoIs, if configured
     if cfg.FPN.FPN_ON and cfg.FPN.MULTILEVEL_ROIS:
         _add_multilevel_rois(blobs)

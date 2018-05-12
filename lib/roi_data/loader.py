@@ -8,7 +8,7 @@ import torch.utils.data.sampler as sampler
 from torch.utils.data.dataloader import default_collate
 
 from core.config import cfg
-from roi_data.minibatch import get_minibatch
+from roi_data.minibatch import get_minibatch, get_minibatch_blob_names
 import utils.blob as blob_utils
 # from model.rpn.bbox_transform import bbox_transform_inv, clip_boxes
 
@@ -23,32 +23,35 @@ class RoiDataLoader(data.Dataset):
     def __getitem__(self, index_tuple):
         index, ratio = index_tuple
         single_db = [self._roidb[index]]
-        blobs, valid = get_minibatch(single_db)
-        #TODO: Check if minibatch is valid ? If not, abandon it.
-        # Need to change _worker_loop in torch.utils.data.dataloader.py.
 
-        # Squeeze batch dim
-        for key in blobs:
-            if key != 'roidb':
-                blobs[key] = blobs[key].squeeze(axis=0)
+        if cfg.RPN.RPN_ON:
+            blobs, valid = get_minibatch(single_db)
+            # Squeeze batch dim
+            # for key in blobs:
+            #     print (key, len(blobs[key]), '--------lala')
+            for key in blobs:
+                if key != 'roidb':
+                    blobs[key] = blobs[key].squeeze(axis=0)
 
-        if self._roidb[index]['need_crop']:
-            self.crop_data(blobs, ratio)
-            # Check bounding box
-            entry = blobs['roidb'][0]
-            boxes = entry['boxes']
-            invalid = (boxes[:, 0] == boxes[:, 2]) | (boxes[:, 1] == boxes[:, 3])
-            valid_inds = np.nonzero(~ invalid)[0]
-            if len(valid_inds) < len(boxes):
-                for key in ['boxes', 'gt_classes', 'seg_areas', 'gt_overlaps', 'is_crowd',
-                            'box_to_gt_ind_map', 'gt_keypoints']:
-                    if key in entry:
-                        entry[key] = entry[key][valid_inds]
-                entry['segms'] = [entry['segms'][ind] for ind in valid_inds]
+            if self._roidb[index]['need_crop']:
+                self.crop_data(blobs, ratio)
+                # Check bounding box
+                entry = blobs['roidb'][0]
+                boxes = entry['boxes']
+                invalid = (boxes[:, 0] == boxes[:, 2]) | (boxes[:, 1] == boxes[:, 3])
+                valid_inds = np.nonzero(~ invalid)[0]
+                if len(valid_inds) < len(boxes):
+                    for key in ['boxes', 'gt_classes', 'seg_areas', 'gt_overlaps', 'is_crowd',
+                                'box_to_gt_ind_map', 'gt_keypoints']:
+                        if key in entry:
+                            entry[key] = entry[key][valid_inds]
+                    entry['segms'] = [entry['segms'][ind] for ind in valid_inds]
 
-        blobs['roidb'] = blob_utils.serialize(blobs['roidb'])  # CHECK: maybe we can serialize in collate_fn
+            blobs['roidb'] = blob_utils.serialize(blobs['roidb'])  # CHECK: maybe we can serialize in collate_fn
 
-        return blobs
+            return blobs
+        else:
+            return self._roidb[index]
 
     def crop_data(self, blobs, ratio):
         data_height, data_width = map(int, blobs['im_info'][:2])
@@ -183,20 +186,31 @@ def collate_minibatch(list_of_blobs):
     A batch contains NUM_GPUS minibatches and image size in different minibatch may be different.
     Hence, we need to stack smaples from each minibatch seperately.
     """
-    Batch = {key: [] for key in list_of_blobs[0]}
-    # Because roidb consists of entries of variable length, it can't be batch into a tensor.
-    # So we keep roidb in the type of "list of ndarray".
-    list_of_roidb = [blobs.pop('roidb') for blobs in list_of_blobs]
-    for i in range(0, len(list_of_blobs), cfg.TRAIN.IMS_PER_BATCH):
-        mini_list = list_of_blobs[i:(i + cfg.TRAIN.IMS_PER_BATCH)]
-        # Pad image data
-        mini_list = pad_image_data(mini_list)
-        minibatch = default_collate(mini_list)
-        minibatch['roidb'] = list_of_roidb[i:(i + cfg.TRAIN.IMS_PER_BATCH)]
-        for key in minibatch:
-            Batch[key].append(minibatch[key])
+    if cfg.RPN.RPN_ON:
+        Batch = {key: [] for key in list_of_blobs[0]}
+        # Because roidb consists of entries of variable length, it can't be batch into a tensor.
+        # So we keep roidb in the type of "list of ndarray".
+        list_of_roidb = [blobs.pop('roidb') for blobs in list_of_blobs]
+        for i in range(0, len(list_of_blobs), cfg.TRAIN.IMS_PER_BATCH):
+            mini_list = list_of_blobs[i:(i + cfg.TRAIN.IMS_PER_BATCH)]
+            # Pad image data
+            mini_list = pad_image_data(mini_list)
+            minibatch = default_collate(mini_list)
+            minibatch['roidb'] = list_of_roidb[i:(i + cfg.TRAIN.IMS_PER_BATCH)]
+            for key in minibatch:
+                Batch[key].append(minibatch[key])
 
-    return Batch
+        return Batch
+    else:
+        Batch = {key: [] for key in get_minibatch_blob_names()}
+        for i in range(0, len(list_of_blobs), cfg.TRAIN.IMS_PER_BATCH):
+            roidb = list_of_blobs[i:(i + cfg.TRAIN.IMS_PER_BATCH)]
+            blobs, valid = get_minibatch(roidb)
+            blobs['data'] = torch.from_numpy(blobs['data'])
+            for key in blobs:
+                Batch[key].append(blobs[key])
+
+        return Batch
 
 
 def pad_image_data(list_of_blobs):
