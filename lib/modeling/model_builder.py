@@ -110,7 +110,7 @@ class Generalized_RCNN(nn.Module):
             for p in self.Conv_Body.parameters():
                 p.requires_grad = False
 
-    def forward(self, data, im_info=None, roidb=None, **rpn_kwargs):
+    def forward(self, data, im_info=None, roidb=None, only_body=None, **rpn_kwargs):
         im_data = data
         if self.training and cfg.RPN.RPN_ON:
             roidb = list(map(lambda x: blob_utils.deserialize(x)[0], roidb))
@@ -137,6 +137,9 @@ class Generalized_RCNN(nn.Module):
 
         if not self.training:
             return_dict['blob_conv'] = blob_conv
+
+        if only_body is not None:
+            return return_dict
 
         if not cfg.MODEL.RPN_ONLY:
             if cfg.MODEL.SHARE_RES5 and self.training:

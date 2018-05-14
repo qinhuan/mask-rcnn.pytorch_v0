@@ -81,7 +81,7 @@ def im_detect_all(model, im, box_proposals=None, timers=None):
     if cfg.MODEL.MASK_ON and boxes.shape[0] > 0:
         timers['im_detect_mask'].tic()
         if cfg.TEST.MASK_AUG.ENABLED:
-            masks = im_detect_mask_aug(model, im, boxes, blob_conv)
+            masks = im_detect_mask_aug(model, im, boxes)
         else:
             if cfg.MODEL.BOUNDARY_ON:
                 masks, boundary = im_detect_mask(model, im_scale, boxes, blob_conv)
@@ -112,6 +112,19 @@ def im_detect_all(model, im, box_proposals=None, timers=None):
         cls_keyps = None
 
     return cls_boxes, cls_segms, cls_keyps, cls_boundary
+
+
+def im_conv_body_only(model, im, target_scale, target_max_size):
+    boxes = None
+    inputs, im_scale = _get_blobs(im, boxes, target_scale, target_max_size)
+
+    inputs['data'] = [Variable(torch.from_numpy(inputs['data']), volatile=True)]
+    inputs['im_info'] = [Variable(torch.from_numpy(inputs['im_info']), volatile=True)]
+    inputs['only_body'] = [1]
+
+    return_dict = model(**inputs)
+
+    return im_scale, return_dict['blob_conv']
 
 
 def im_detect_bbox(model, im, target_scale, target_max_size, boxes=None):
@@ -240,7 +253,7 @@ def im_detect_bbox_aug(model, im, box_proposals=None):
     # Compute detections for the original image (identity transform) last to
     # ensure that the Caffe2 workspace is populated with blobs corresponding
     # to the original image on return (postcondition of im_detect_bbox)
-    scores_i, boxes_i, im_scale_i = im_detect_bbox(
+    scores_i, boxes_i, im_scale_i, blob_conv = im_detect_bbox(
         model, im, cfg.TEST.SCALE, cfg.TEST.MAX_SIZE, boxes=box_proposals
     )
     add_preds_t(scores_i, boxes_i)
@@ -269,7 +282,7 @@ def im_detect_bbox_aug(model, im, box_proposals=None):
             'Coord heur {} not supported'.format(cfg.TEST.BBOX_AUG.COORD_HEUR)
         )
 
-    return scores_c, boxes_c, im_scale_i
+    return scores_c, boxes_c, im_scale_i, blob_conv
 
 
 def im_detect_bbox_hflip(
@@ -286,7 +299,7 @@ def im_detect_bbox_hflip(
     else:
         box_proposals_hf = None
 
-    scores_hf, boxes_hf, im_scale = im_detect_bbox(
+    scores_hf, boxes_hf, im_scale, _ = im_detect_bbox(
         model, im_hf, target_scale, target_max_size, boxes=box_proposals_hf
     )
 
@@ -306,7 +319,7 @@ def im_detect_bbox_scale(
             model, im, target_scale, target_max_size, box_proposals=box_proposals
         )
     else:
-        scores_scl, boxes_scl, _ = im_detect_bbox(
+        scores_scl, boxes_scl, _, _ = im_detect_bbox(
             model, im, target_scale, target_max_size, boxes=box_proposals
         )
     return scores_scl, boxes_scl
@@ -334,7 +347,7 @@ def im_detect_bbox_aspect_ratio(
             box_proposals=box_proposals_ar
         )
     else:
-        scores_ar, boxes_ar, _ = im_detect_bbox(
+        scores_ar, boxes_ar, _, _ = im_detect_bbox(
             model,
             im_ar,
             cfg.TEST.SCALE,
@@ -415,8 +428,8 @@ def im_detect_mask_aug(model, im, boxes):
     masks_ts = []
 
     # Compute masks for the original image (identity transform)
-    im_scale_i = im_conv_body_only(model, im, cfg.TEST.SCALE, cfg.TEST.MAX_SIZE)
-    masks_i = im_detect_mask(model, im_scale_i, boxes)
+    im_scale_i, blob_conv = im_conv_body_only(model, im, cfg.TEST.SCALE, cfg.TEST.MAX_SIZE)
+    masks_i = im_detect_mask(model, im_scale_i, boxes, blob_conv)
     masks_ts.append(masks_i)
 
     # Perform mask detection on the horizontally flipped image
@@ -478,8 +491,8 @@ def im_detect_mask_hflip(model, im, target_scale, target_max_size, boxes):
     im_hf = im[:, ::-1, :]
     boxes_hf = box_utils.flip_boxes(boxes, im.shape[1])
 
-    im_scale = im_conv_body_only(model, im_hf, target_scale, target_max_size)
-    masks_hf = im_detect_mask(model, im_scale, boxes_hf)
+    im_scale, blob_conv = im_conv_body_only(model, im_hf, target_scale, target_max_size)
+    masks_hf = im_detect_mask(model, im_scale, boxes_hf, blob_conv)
 
     # Invert the predicted soft masks
     masks_inv = masks_hf[:, :, :, ::-1]
@@ -495,8 +508,8 @@ def im_detect_mask_scale(
             model, im, target_scale, target_max_size, boxes
         )
     else:
-        im_scale = im_conv_body_only(model, im, target_scale, target_max_size)
-        masks_scl = im_detect_mask(model, im_scale, boxes)
+        im_scale, blob_conv = im_conv_body_only(model, im, target_scale, target_max_size)
+        masks_scl = im_detect_mask(model, im_scale, boxes, blob_conv)
     return masks_scl
 
 
@@ -512,10 +525,10 @@ def im_detect_mask_aspect_ratio(model, im, aspect_ratio, boxes, hflip=False):
             model, im_ar, cfg.TEST.SCALE, cfg.TEST.MAX_SIZE, boxes_ar
         )
     else:
-        im_scale = im_conv_body_only(
+        im_scale, blob_conv = im_conv_body_only(
             model, im_ar, cfg.TEST.SCALE, cfg.TEST.MAX_SIZE
         )
-        masks_ar = im_detect_mask(model, im_scale, boxes_ar)
+        masks_ar = im_detect_mask(model, im_scale, boxes_ar, blob_conv)
 
     return masks_ar
 
@@ -752,9 +765,9 @@ def box_results_with_nms_and_limit(scores, boxes):  # NOTE: support single-batch
         if cfg.TEST.SOFT_NMS.ENABLED:
             nms_dets, _ = box_utils.soft_nms(
                 dets_j,
-                sigma=cfg.TEST.SOFT_NMS.SIGMA,
-                overlap_thresh=cfg.TEST.NMS,
-                score_thresh=0.0001,
+                # sigma=cfg.TEST.SOFT_NMS.SIGMA,
+                # overlap_thresh=cfg.TEST.NMS,
+                # score_thresh=0.0001,
                 method=cfg.TEST.SOFT_NMS.METHOD
             )
         else:
