@@ -362,7 +362,7 @@ def main():
                         input_data[key] = list(map(Variable, input_data[key]))
             else:
                 input_data['data'] = list(map(Variable, input_data['data']))
-
+            
             training_stats.IterTic()
             net_outputs = maskRCNN(**input_data)
             training_stats.IterToc()

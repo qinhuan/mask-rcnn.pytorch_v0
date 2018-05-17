@@ -148,6 +148,10 @@ def im_detect_bbox(model, im, target_scale, target_max_size, boxes=None):
     inputs['data'] = [Variable(torch.from_numpy(inputs['data']), volatile=True)]
     inputs['im_info'] = [Variable(torch.from_numpy(inputs['im_info']), volatile=True)]
 
+    for key in inputs.keys():
+        if key is not 'data' and key is not 'im_info':
+            inputs[key] = [inputs[key]]
+
     return_dict = model(**inputs)
 
     if cfg.MODEL.FASTER_RCNN:
@@ -331,7 +335,7 @@ def im_detect_bbox_aspect_ratio(
     Returns predictions in the original image space.
     """
     # Compute predictions on the transformed image
-    im_ar = image_utils.aspect_ratio_rel(im, aspect_ratio)
+    im_ar = aspect_ratio_rel(im, aspect_ratio)
 
     if not cfg.MODEL.FASTER_RCNN:
         box_proposals_ar = box_utils.aspect_ratio(box_proposals, aspect_ratio)
@@ -517,7 +521,7 @@ def im_detect_mask_aspect_ratio(model, im, aspect_ratio, boxes, hflip=False):
     """Computes mask detections at the given width-relative aspect ratio."""
 
     # Perform mask detection on the transformed image
-    im_ar = image_utils.aspect_ratio_rel(im, aspect_ratio)
+    im_ar = aspect_ratio_rel(im, aspect_ratio)
     boxes_ar = box_utils.aspect_ratio(boxes, aspect_ratio)
 
     if hflip:
@@ -695,7 +699,7 @@ def im_detect_keypoints_aspect_ratio(
     """Detects keypoints at the given width-relative aspect ratio."""
 
     # Perform keypoint detectionon the transformed image
-    im_ar = image_utils.aspect_ratio_rel(im, aspect_ratio)
+    im_ar = aspect_ratio_rel(im, aspect_ratio)
     boxes_ar = box_utils.aspect_ratio(boxes, aspect_ratio)
 
     if hflip:
@@ -937,3 +941,11 @@ def _get_blobs(im, rois, target_scale, target_max_size):
     if rois is not None:
         blobs['rois'] = _get_rois_blob(rois, im_scale)
     return blobs, im_scale
+
+
+def aspect_ratio_rel(im, aspect_ratio):
+    """Performs width-relative aspect ratio transformation."""
+    im_h, im_w = im.shape[:2]
+    im_ar_w = int(round(aspect_ratio * im_w))
+    im_ar = cv2.resize(im, dsize=(im_ar_w, im_h))
+    return im_ar

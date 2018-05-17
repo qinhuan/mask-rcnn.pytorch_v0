@@ -274,6 +274,7 @@ class bottomup_lateral_module(nn.Module):
         init.constant(self.conv_posthoc.bias, 0)
 
     def forward(self, down_blob, lateral_blob):
+        down_blob = F.relu(down_blob)
         out = self.conv_downsample(down_blob) + lateral_blob
         out = F.relu(out, inplace=True)
         out = self.conv_posthoc(out)

@@ -116,6 +116,65 @@ class roi_2mlp_head(nn.Module):
         return x
 
 
+class fast_rcnn_flexible_head(nn.Module):
+    """for adap or normal or conv head.
+    """
+    def __init__(self, dim_in, roi_xform_func, spatial_scale):
+        super().__init__()
+        self.dim_in = dim_in
+        self.roi_xform = roi_xform_func
+        self.spatial_scale = spatial_scale
+        self.dim_out = hidden_dim = cfg.FAST_RCNN.MLP_HEAD_DIM
+
+        roi_size = cfg.FAST_RCNN.ROI_XFORM_RESOLUTION
+
+        # FC1 for adap
+        if cfg.FPN.ADA_POOL:
+            self.fc1_list = nn.ModuleList()
+            for i in range(4):
+                self.fc1_list.append(
+                    nn.Linear(dim_in * roi_size**2, hidden_dim)
+                )
+        else:
+            self.fc1 = nn.Linear(dim_in * roi_size**2, hidden_dim)
+
+        self.fc2 = nn.Linear(hidden_dim, hidden_dim)
+
+        self.apply(self._init_weights)
+
+    def _init_weights(self, m):
+        if isinstance(m, nn.Linear):
+            mynn.init.XavierFill(m.weight)
+            init.constant(m.bias, 0)
+
+    def forward(self, x, rpn_ret):
+        x = self.roi_xform(
+            x, rpn_ret,
+            blob_rois='rois',
+            method=cfg.FAST_RCNN.ROI_XFORM_METHOD,
+            resolution=cfg.FAST_RCNN.ROI_XFORM_RESOLUTION,
+            spatial_scale=self.spatial_scale,
+            sampling_ratio=cfg.FAST_RCNN.ROI_XFORM_SAMPLING_RATIO
+        )
+        if cfg.FPN.ADA_POOL:
+            out_list = []
+            for i in range(4):
+                batch_size = x[i].size(0)
+                tmp_x = F.relu(self.fc1_list[i](x[i].view(batch_size, -1)), inplace=True)
+                out_list.append(
+                    tmp_x.view(1, batch_size, -1)
+                )
+            x = torch.cat(out_list, dim=0) # 4,batch_size,-1
+            x = torch.max(x, 0)[0] # batch_size,-1
+        else:
+            x = F.relu(self.fc1(x.view(batch_size, -1)), inplace=True)
+            
+        x = F.relu(self.fc2(x), inplace=True)
+
+        return x
+
+# ---------------------------- old method -------------------------------------
+
 class roi_2mlp_head_adapooling(nn.Module):
     """Add a ReLU MLP with two hidden layers."""
     def __init__(self, dim_in, roi_xform_func, spatial_scale):

@@ -197,8 +197,10 @@ class mask_rcnn_with_boundary_head(nn.Module):
         return [x_m_b, x_boundary]
 
 
-class mask_rcnn_fcn_fc_Fusion_head(nn.Module):
-    """Fusion FCN and FC, from PANet
+
+
+class mask_rcnn_flexible_head(nn.Module):
+    """For FF, or adap, or other
     """
     def __init__(self, dim_in, roi_xform_func, spatial_scale):
         super().__init__()
@@ -210,15 +212,26 @@ class mask_rcnn_fcn_fc_Fusion_head(nn.Module):
         dim_inner = cfg.MRCNN.DIM_REDUCED
         self.dim_out = dim_inner
 
+        # For adap conv1
+        if cfg.FPN.ADA_POOL:
+            self.conv3x3_list = nn.ModuleList()
+            for i in range(4):
+                self.conv3x3_list.append(
+                    nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation)
+                )
+        else:
+            self.conv3x3 = nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation)
+
         # pre_module_list 3 conv3x3
-        pre_module_list = []
-        for i in range(3):
-            pre_module_list.extend([
+        conv3x3_2_list = []
+        for i in range(2):
+            conv3x3_2_list.extend([
                 nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
                 nn.ReLU(inplace=True)
             ])
-        self.conv_pre = nn.Sequential(*pre_module_list)
+        self.conv3x3_2 = nn.Sequential(*conv3x3_2_list)
 
+        
         # FCN head: conv3x3, deconv, conv1x1
         n_classes = cfg.MODEL.NUM_CLASSES if cfg.MRCNN.CLS_SPECIFIC_MASK else 1
         FCN_head_list = []
@@ -231,17 +244,19 @@ class mask_rcnn_fcn_fc_Fusion_head(nn.Module):
         ])
         self.conv_FCN = nn.Sequential(*FCN_head_list)
 
-        # FC head: conv3x3, conv3x3, fc784
-        roi_size = cfg.MRCNN.ROI_XFORM_RESOLUTION
-        FC_head_list = []
-        FC_head_list.extend([
-            nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(dim_in, dim_inner // 2, 3, 1, padding=1*dilation, dilation=dilation),
-            nn.ReLU(inplace=True)
-        ])
-        self.conv_FC_1 = nn.Sequential(*FC_head_list)
-        self.conv_FC_2 = nn.Linear(dim_in // 2 * roi_size**2, roi_size * roi_size * 4) # 128*14*14, 28*28
+        # FF or normal
+        if cfg.MRCNN.FUSION:
+            # FC head: conv3x3, conv3x3, fc784
+            roi_size = cfg.MRCNN.ROI_XFORM_RESOLUTION
+            FC_head_list = []
+            FC_head_list.extend([
+                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
+                nn.ReLU(inplace=True),
+                nn.Conv2d(dim_in, dim_inner // 2, 3, 1, padding=1*dilation, dilation=dilation),
+                nn.ReLU(inplace=True)
+            ])
+            self.conv_FC_1 = nn.Sequential(*FC_head_list)
+            self.conv_FC_2 = nn.Linear(dim_in // 2 * roi_size**2, roi_size * roi_size * 4) # 128*14*14, 28*28
 
         self.apply(self._init_weights)
         
@@ -267,81 +282,38 @@ class mask_rcnn_fcn_fc_Fusion_head(nn.Module):
             spatial_scale=self.spatial_scale,
             sampling_ratio=cfg.MRCNN.ROI_XFORM_SAMPLING_RATIO
         )
-        x = self.conv_pre(x)
-        x_FCN = self.conv_FCN(x)
-        n_rois, n_classes, H, W = x_FCN.size()
+        # conv3x3 1
+        if cfg.FPN.ADA_POOL:
+            out_list = []
+            for i in range(4):
+                tmp_x = F.relu(self.conv3x3_list[i](x[i]), inplace=True)
+                B, C, H, W = tmp_x.size()
+                out_list.append(
+                    tmp_x.view(1, B, C, H, W)
+                )
+            x = torch.cat(out_list, dim=0) # 4,b,c,h,w
+            x = torch.max(x, 0)[0] # b,c,h,w
+        else:
+            x = F.relu(self.conv3x3(x), inplace=True)
 
-        x_FC = self.conv_FC_1(x)
-        x_FC = self.conv_FC_2(x_FC.view(n_rois, -1))
-        x = x_FCN + x_FC.view(n_rois, 1, H, W).expand(n_rois, n_classes, H, W)
+        # conv3x3 2
+        x = self.conv3x3_2(x)
+
+        # FCN head
+        x_FCN = self.conv_FCN(x)
+
+        # FF
+        if cfg.MRCNN.FUSION:
+            n_rois, n_classes, H, W = x_FCN.size()
+            x_FC = self.conv_FC_1(x)
+            x_FC = self.conv_FC_2(x_FC.view(n_rois, -1))
+            x = x_FCN + x_FC.view(n_rois, 1, H, W).expand(n_rois, n_classes, H, W)
+        else:
+            x = x_FCN
+
         if not self.training:
             x = F.sigmoid(x)
         return x
-
-
-class mask_rcnn_fcn_head_adapooling(nn.Module):
-    """v1upXconvs design: X * (conv 3x3), convT 2x2."""
-    def __init__(self, dim_in, roi_xform_func, spatial_scale):
-        super().__init__()
-        self.dim_in = dim_in
-        self.roi_xform = roi_xform_func
-        self.spatial_scale = spatial_scale
-        self.num_convs = 4
-
-        dilation = cfg.MRCNN.DILATION
-        dim_inner = cfg.MRCNN.DIM_REDUCED
-        self.dim_out = dim_inner
-
-        self.conv3x3_list = nn.ModuleList()
-        for i in range(4):
-            self.conv3x3_list.append(
-                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation)
-            )
-
-        module_list = []
-        for i in range(3):
-            module_list.extend([
-                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
-                nn.ReLU(inplace=True)
-            ])
-            dim_in = dim_inner
-        self.conv_fcn = nn.Sequential(*module_list)
-
-        # upsample layer
-        self.upconv = nn.ConvTranspose2d(dim_inner, dim_inner, 2, 2, 0)
-
-        self.apply(self._init_weights)
-
-    def _init_weights(self, m):
-        if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
-            if cfg.MRCNN.CONV_INIT == 'GaussianFill':
-                init.normal(m.weight, std=0.001)
-            elif cfg.MRCNN.CONV_INIT == 'MSRAFill':
-                mynn.init.MSRAFill(m.weight)
-            else:
-                raise ValueError
-            init.constant(m.bias, 0)
-
-    def forward(self, x, rpn_ret):
-        x = self.roi_xform(
-            x, rpn_ret,
-            blob_rois='mask_rois',
-            method=cfg.MRCNN.ROI_XFORM_METHOD,
-            resolution=cfg.MRCNN.ROI_XFORM_RESOLUTION,
-            spatial_scale=self.spatial_scale,
-            sampling_ratio=cfg.MRCNN.ROI_XFORM_SAMPLING_RATIO
-        )
-        out_list = []
-        for i in range(4):
-            tmp_x = F.relu(self.conv3x3_list[i](x[i]), inplace=True)
-            B, C, H, W = tmp_x.size()
-            out_list.append(
-                tmp_x.view(1, B, C, H, W)
-            )
-        x = torch.cat(out_list, dim=0) # 4,b,c,h,w
-        x = torch.max(x, 0)[0] # b,c,h,w
-        x = self.conv_fcn(x)
-        return F.relu(self.upconv(x), inplace=True)
 
 
 class mask_rcnn_fcn_head_v1upXconvs(nn.Module):
@@ -536,3 +508,151 @@ def ResNet_roi_conv5_head_for_masks(dim_in):
     stride_init = cfg.MRCNN.ROI_XFORM_RESOLUTION // 7  # by default: 2
     module, dim_out = ResNet.add_stage(dim_in, 512, 3, stride_init, dilation)
     return module, dim_out
+
+# --------------------------- old method ----------------------
+
+class mask_rcnn_fcn_head_adapooling(nn.Module):
+    """v1upXconvs design: X * (conv 3x3), convT 2x2."""
+    def __init__(self, dim_in, roi_xform_func, spatial_scale):
+        super().__init__()
+        self.dim_in = dim_in
+        self.roi_xform = roi_xform_func
+        self.spatial_scale = spatial_scale
+        self.num_convs = 4
+
+        dilation = cfg.MRCNN.DILATION
+        dim_inner = cfg.MRCNN.DIM_REDUCED
+        self.dim_out = dim_inner
+
+        self.conv3x3_list = nn.ModuleList()
+        for i in range(4):
+            self.conv3x3_list.append(
+                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation)
+            )
+
+        module_list = []
+        for i in range(3):
+            module_list.extend([
+                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
+                nn.ReLU(inplace=True)
+            ])
+            dim_in = dim_inner
+        self.conv_fcn = nn.Sequential(*module_list)
+
+        # upsample layer
+        self.upconv = nn.ConvTranspose2d(dim_inner, dim_inner, 2, 2, 0)
+
+        self.apply(self._init_weights)
+
+    def _init_weights(self, m):
+        if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
+            if cfg.MRCNN.CONV_INIT == 'GaussianFill':
+                init.normal(m.weight, std=0.001)
+            elif cfg.MRCNN.CONV_INIT == 'MSRAFill':
+                mynn.init.MSRAFill(m.weight)
+            else:
+                raise ValueError
+            init.constant(m.bias, 0)
+
+    def forward(self, x, rpn_ret):
+        x = self.roi_xform(
+            x, rpn_ret,
+            blob_rois='mask_rois',
+            method=cfg.MRCNN.ROI_XFORM_METHOD,
+            resolution=cfg.MRCNN.ROI_XFORM_RESOLUTION,
+            spatial_scale=self.spatial_scale,
+            sampling_ratio=cfg.MRCNN.ROI_XFORM_SAMPLING_RATIO
+        )
+        out_list = []
+        for i in range(4):
+            tmp_x = F.relu(self.conv3x3_list[i](x[i]), inplace=True)
+            B, C, H, W = tmp_x.size()
+            out_list.append(
+                tmp_x.view(1, B, C, H, W)
+            )
+        x = torch.cat(out_list, dim=0) # 4,b,c,h,w
+        x = torch.max(x, 0)[0] # b,c,h,w
+        x = self.conv_fcn(x)
+        return F.relu(self.upconv(x), inplace=True)
+
+
+class mask_rcnn_fcn_fc_Fusion_head(nn.Module):
+    """Fusion FCN and FC, from PANet
+    """
+    def __init__(self, dim_in, roi_xform_func, spatial_scale):
+        super().__init__()
+        self.dim_in = dim_in
+        self.roi_xform = roi_xform_func
+        self.spatial_scale = spatial_scale
+
+        dilation = cfg.MRCNN.DILATION
+        dim_inner = cfg.MRCNN.DIM_REDUCED
+        self.dim_out = dim_inner
+
+        # pre_module_list 3 conv3x3
+        pre_module_list = []
+        for i in range(3):
+            pre_module_list.extend([
+                nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
+                nn.ReLU(inplace=True)
+            ])
+        self.conv_pre = nn.Sequential(*pre_module_list)
+
+        # FCN head: conv3x3, deconv, conv1x1
+        n_classes = cfg.MODEL.NUM_CLASSES if cfg.MRCNN.CLS_SPECIFIC_MASK else 1
+        FCN_head_list = []
+        FCN_head_list.extend([
+            nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
+            nn.ReLU(inplace=True),
+            nn.ConvTranspose2d(dim_inner, dim_inner, 2, 2, 0),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(dim_in, n_classes, 1, 1, 0)
+        ])
+        self.conv_FCN = nn.Sequential(*FCN_head_list)
+
+        # FC head: conv3x3, conv3x3, fc784
+        roi_size = cfg.MRCNN.ROI_XFORM_RESOLUTION
+        FC_head_list = []
+        FC_head_list.extend([
+            nn.Conv2d(dim_in, dim_inner, 3, 1, padding=1*dilation, dilation=dilation),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(dim_in, dim_inner // 2, 3, 1, padding=1*dilation, dilation=dilation),
+            nn.ReLU(inplace=True)
+        ])
+        self.conv_FC_1 = nn.Sequential(*FC_head_list)
+        self.conv_FC_2 = nn.Linear(dim_in // 2 * roi_size**2, roi_size * roi_size * 4) # 128*14*14, 28*28
+
+        self.apply(self._init_weights)
+        
+    def _init_weights(self, m):
+        if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
+            if cfg.MRCNN.CONV_INIT == 'GaussianFill':
+                init.normal(m.weight, std=0.001)
+            elif cfg.MRCNN.CONV_INIT == 'MSRAFill':
+                mynn.init.MSRAFill(m.weight)
+            else:
+                raise ValueError
+            init.constant(m.bias, 0)
+        elif isinstance(m, nn.Linear):
+            init.normal(m.weight, std=0.001)
+            init.constant(m.bias, 0)
+
+    def forward(self, x, rpn_ret):
+        x = self.roi_xform(
+            x, rpn_ret,
+            blob_rois='mask_rois',
+            method=cfg.MRCNN.ROI_XFORM_METHOD,
+            resolution=cfg.MRCNN.ROI_XFORM_RESOLUTION,
+            spatial_scale=self.spatial_scale,
+            sampling_ratio=cfg.MRCNN.ROI_XFORM_SAMPLING_RATIO
+        )
+        x = self.conv_pre(x)
+        x_FCN = self.conv_FCN(x)
+        n_rois, n_classes, H, W = x_FCN.size()
+
+        x_FC = self.conv_FC_1(x)
+        x_FC = self.conv_FC_2(x_FC.view(n_rois, -1))
+        x = x_FCN + x_FC.view(n_rois, 1, H, W).expand(n_rois, n_classes, H, W)
+        if not self.training:
+            x = F.sigmoid(x)
+        return x
