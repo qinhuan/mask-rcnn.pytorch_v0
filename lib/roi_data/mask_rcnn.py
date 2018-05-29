@@ -72,7 +72,10 @@ def add_mask_rcnn_blobs(blobs, sampled_boxes, roidb, im_scale, batch_idx):
             mask = segm_utils.polys_to_mask_wrt_box(poly_gt, roi_fg, M)
             mask = np.array(mask > 0, dtype=np.int32)  # Ensure it's binary
             if cfg.MODEL.BOUNDARY_ON:
-                boundary = get_boundary(mask)
+                bao = np.zeros((M + 2, M + 2), dtype=np.int8)
+                bao[1:M+1, 1:M+1] = mask
+                boundary = get_boundary(bao)
+                boundary = boundary[1:M+1, 1:M+1]
                 boundarys[i, :] = np.reshape(boundary, M**2)
             masks[i, :] = np.reshape(mask, M**2)
     else:  # If there are no fg masks (it does happen)

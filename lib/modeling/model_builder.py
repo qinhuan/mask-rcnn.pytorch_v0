@@ -85,7 +85,7 @@ class Generalized_RCNN(nn.Module):
                 self.Conv_Body.dim_out, self.roi_feature_transform, self.Conv_Body.spatial_scale)
             if getattr(self.Mask_Head, 'SHARE_RES5', False):
                 self.Mask_Head.share_res5_module(self.Box_Head.res5)
-            self.Mask_Outs = mask_rcnn_heads.mask_rcnn_outputs(self.Mask_Head.dim_out)
+            # self.Mask_Outs = mask_rcnn_heads.mask_rcnn_outputs(self.Mask_Head.dim_out)
 
         # Keypoints Branch
         if cfg.MODEL.KEYPOINTS_ON:
@@ -189,13 +189,14 @@ class Generalized_RCNN(nn.Module):
                     mask_pred = mask_feat[0]
                     boundary_pred = mask_feat[1]
                 else:
-                    mask_pred = self.Mask_Outs(mask_feat)
+                    mask_pred = mask_feat
                 # return_dict['mask_pred'] = mask_pred
                 # mask loss
                 loss_mask = mask_rcnn_heads.mask_rcnn_losses(mask_pred, rpn_ret['masks_int32'])
                 return_dict['losses']['loss_mask'] = loss_mask
                 if cfg.MODEL.BOUNDARY_ON:
                     loss_boundary = mask_rcnn_heads.mask_rcnn_losses(boundary_pred, rpn_ret['boundary_int32'])
+                    return_dict['losses']['loss_boundary'] = loss_boundary
 
             if cfg.MODEL.KEYPOINTS_ON:
                 if getattr(self.Keypoint_Head, 'SHARE_RES5', False):
@@ -348,7 +349,7 @@ class Generalized_RCNN(nn.Module):
                 boundary_pred = mask_feat[1]
                 return [mask_pred, boundary_pred]
             else:
-                mask_pred = self.Mask_Outs(mask_feat)
+                mask_pred = mask_feat
             return mask_pred
         else:
             raise ValueError('You should call this function only on inference.'

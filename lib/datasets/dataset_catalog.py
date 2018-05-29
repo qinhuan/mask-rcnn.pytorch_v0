@@ -75,6 +75,12 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_minitrain2014.json'
     },
+    'coco_2014_minitrain_0.2': {
+        IM_DIR:
+            _DATA_DIR + '/coco/images/train2014',
+        ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_minitrain_0.2_2014.json'
+    },
     'coco_2014_val': {
         IM_DIR:
             _DATA_DIR + '/coco/images/val2014',

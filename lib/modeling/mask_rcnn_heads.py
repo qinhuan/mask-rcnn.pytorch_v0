@@ -98,6 +98,75 @@ def mask_rcnn_losses(masks_pred, masks_int32):
     return loss * cfg.MRCNN.WEIGHT_LOSS_MASK
 
 
+def mask_rcnn_losses_balanced(masks_pred, masks_int32):
+    """balance loss """
+    n_rois, n_classes, _, _ = masks_pred.size()
+    device_id = masks_pred.get_device()
+    masks_gt = Variable(torch.from_numpy(masks_int32.astype('float32'))).cuda(device_id)
+    weight = (masks_gt > -1).float()  # masks_int32 {1, 0, -1}, -1 means ignore
+    
+    for i in range(n_rois):
+        pos_w = torch.eq(masks_gt[i], 1.0).float()
+        neg_w = torch.eq(masks_gt[i], 0).float()
+
+        num_labels_pos = torch.sum(pos_w)
+        num_labels_neg = torch.sum(neg_w)
+        num_total = num_labels_pos + num_labels_neg
+
+        pos_w *= num_labels_pos / num_total
+        neg_w *= num_labels_neg / num_total
+        weight[i] = (neg_w + pos_w) * weight[i]
+
+    loss = F.binary_cross_entropy_with_logits(
+        masks_pred.view(n_rois, -1), masks_gt, weight, size_average=False)
+    loss /= weight.sum()
+    return loss * cfg.MRCNN.WEIGHT_LOSS_MASK
+
+
+def class_balanced_cross_entropy_loss(output, label, size_average=True, batch_average=True, void_pixels=None):
+    """Define the class balanced cross entropy loss to train the network
+    Args:
+    output: Output of the network
+    label: Ground truth label
+    size_average: return per-element (pixel) average loss
+    batch_average: return per-batch average loss
+    void_pixels: pixels to ignore from the loss
+    Returns:
+    Tensor that evaluates the loss
+    """
+    assert(output.size() == label.size())
+
+    labels = torch.ge(label, 0.5).float()
+
+    num_labels_pos = torch.sum(labels)
+    num_labels_neg = torch.sum(1.0 - labels)
+    num_total = num_labels_pos + num_labels_neg
+
+    output_gt_zero = torch.ge(output, 0).float()
+    loss_val = torch.mul(output, (labels - output_gt_zero)) - torch.log(
+        1 + torch.exp(output - 2 * torch.mul(output, output_gt_zero)))
+
+    loss_pos_pix = -torch.mul(labels, loss_val)
+    loss_neg_pix = -torch.mul(1.0 - labels, loss_val)
+
+    if void_pixels is not None:
+        w_void = torch.le(void_pixels, 0.5).float()
+        loss_pos_pix = torch.mul(w_void, loss_pos_pix)
+        loss_neg_pix = torch.mul(w_void, loss_neg_pix)
+        num_total = num_total - torch.ge(void_pixels, 0.5).float().sum()
+
+    loss_pos = torch.sum(loss_pos_pix)
+    loss_neg = torch.sum(loss_neg_pix)
+
+    final_loss = num_labels_neg / num_total * loss_pos + num_labels_pos / num_total * loss_neg
+
+    if size_average:
+        final_loss /= np.prod(label.size())
+    elif batch_average:
+        final_loss /= label.size()[0]
+
+    return final_loss
+
 # ---------------------------------------------------------------------------- #
 # Mask heads
 # ---------------------------------------------------------------------------- #
@@ -195,8 +264,6 @@ class mask_rcnn_with_boundary_head(nn.Module):
             x_m_b = F.sigmoid(x_m_b)
             x_boundary = F.sigmoid(x_boundary)
         return [x_m_b, x_boundary]
-
-
 
 
 class mask_rcnn_flexible_head(nn.Module):

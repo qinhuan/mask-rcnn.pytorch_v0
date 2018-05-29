@@ -167,6 +167,7 @@ class fast_rcnn_flexible_head(nn.Module):
             x = torch.cat(out_list, dim=0) # 4,batch_size,-1
             x = torch.max(x, 0)[0] # batch_size,-1
         else:
+            batch_size = x.size(0)
             x = F.relu(self.fc1(x.view(batch_size, -1)), inplace=True)
             
         x = F.relu(self.fc2(x), inplace=True)
