@@ -4739,3 +4739,757 @@ INFO train_net_step.py: 134: save model: Outputs/boundary_e2e_mask_rcnn_R-50-FPN
 		loss_rpn_cls: 0.037750, loss_rpn_bbox: 0.066113
 		loss_rpn_cls_fpn2: 0.019218, loss_rpn_cls_fpn3: 0.008794, loss_rpn_cls_fpn4: 0.005147, loss_rpn_cls_fpn5: 0.003250, loss_rpn_cls_fpn6: 0.000892
 		loss_rpn_bbox_fpn2: 0.033492, loss_rpn_bbox_fpn3: 0.008220, loss_rpn_bbox_fpn4: 0.005500, loss_rpn_bbox_fpn5: 0.005132, loss_rpn_bbox_fpn6: 0.009598
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13481 / 20000]
+		loss: 1.044967, lr: 0.020000 time: 5.253809, eta: 9:30:54
+		accuracy_cls: 0.909687
+		loss_cls: 0.274720, loss_bbox: 0.126885, loss_mask: 0.277673, loss_boundary: 0.292495
+		loss_rpn_cls: 0.041199, loss_rpn_bbox: 0.059333
+		loss_rpn_cls_fpn2: 0.018542, loss_rpn_cls_fpn3: 0.010773, loss_rpn_cls_fpn4: 0.005284, loss_rpn_cls_fpn5: 0.003015, loss_rpn_cls_fpn6: 0.001304
+		loss_rpn_bbox_fpn2: 0.018884, loss_rpn_bbox_fpn3: 0.004770, loss_rpn_bbox_fpn4: 0.005508, loss_rpn_bbox_fpn5: 0.004184, loss_rpn_bbox_fpn6: 0.011763
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13501 / 20000]
+		loss: 1.133321, lr: 0.020000 time: 5.254541, eta: 9:29:14
+		accuracy_cls: 0.893868
+		loss_cls: 0.324679, loss_bbox: 0.144861, loss_mask: 0.280935, loss_boundary: 0.302475
+		loss_rpn_cls: 0.043039, loss_rpn_bbox: 0.055223
+		loss_rpn_cls_fpn2: 0.018400, loss_rpn_cls_fpn3: 0.008300, loss_rpn_cls_fpn4: 0.007977, loss_rpn_cls_fpn5: 0.004673, loss_rpn_cls_fpn6: 0.000796
+		loss_rpn_bbox_fpn2: 0.023849, loss_rpn_bbox_fpn3: 0.005977, loss_rpn_bbox_fpn4: 0.006015, loss_rpn_bbox_fpn5: 0.004905, loss_rpn_bbox_fpn6: 0.008616
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13521 / 20000]
+		loss: 1.157268, lr: 0.020000 time: 5.254867, eta: 9:27:31
+		accuracy_cls: 0.898587
+		loss_cls: 0.304374, loss_bbox: 0.136789, loss_mask: 0.285225, loss_boundary: 0.309097
+		loss_rpn_cls: 0.041538, loss_rpn_bbox: 0.059557
+		loss_rpn_cls_fpn2: 0.020801, loss_rpn_cls_fpn3: 0.007626, loss_rpn_cls_fpn4: 0.005298, loss_rpn_cls_fpn5: 0.004129, loss_rpn_cls_fpn6: 0.000680
+		loss_rpn_bbox_fpn2: 0.029043, loss_rpn_bbox_fpn3: 0.007633, loss_rpn_bbox_fpn4: 0.005450, loss_rpn_bbox_fpn5: 0.005267, loss_rpn_bbox_fpn6: 0.009521
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13541 / 20000]
+		loss: 1.157244, lr: 0.020000 time: 5.255386, eta: 9:25:49
+		accuracy_cls: 0.898770
+		loss_cls: 0.304273, loss_bbox: 0.142877, loss_mask: 0.291843, loss_boundary: 0.296091
+		loss_rpn_cls: 0.040956, loss_rpn_bbox: 0.051383
+		loss_rpn_cls_fpn2: 0.015407, loss_rpn_cls_fpn3: 0.009979, loss_rpn_cls_fpn4: 0.006514, loss_rpn_cls_fpn5: 0.003882, loss_rpn_cls_fpn6: 0.000855
+		loss_rpn_bbox_fpn2: 0.023024, loss_rpn_bbox_fpn3: 0.005817, loss_rpn_bbox_fpn4: 0.004861, loss_rpn_bbox_fpn5: 0.005785, loss_rpn_bbox_fpn6: 0.010098
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13561 / 20000]
+		loss: 1.124462, lr: 0.020000 time: 5.255514, eta: 9:24:05
+		accuracy_cls: 0.905392
+		loss_cls: 0.293721, loss_bbox: 0.134084, loss_mask: 0.283658, loss_boundary: 0.298931
+		loss_rpn_cls: 0.044202, loss_rpn_bbox: 0.060877
+		loss_rpn_cls_fpn2: 0.020842, loss_rpn_cls_fpn3: 0.009206, loss_rpn_cls_fpn4: 0.006302, loss_rpn_cls_fpn5: 0.004235, loss_rpn_cls_fpn6: 0.000576
+		loss_rpn_bbox_fpn2: 0.030429, loss_rpn_bbox_fpn3: 0.006343, loss_rpn_bbox_fpn4: 0.005782, loss_rpn_bbox_fpn5: 0.005837, loss_rpn_bbox_fpn6: 0.009929
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13581 / 20000]
+		loss: 1.122696, lr: 0.020000 time: 5.256225, eta: 9:22:24
+		accuracy_cls: 0.898103
+		loss_cls: 0.310043, loss_bbox: 0.145422, loss_mask: 0.277931, loss_boundary: 0.300323
+		loss_rpn_cls: 0.041298, loss_rpn_bbox: 0.059147
+		loss_rpn_cls_fpn2: 0.017054, loss_rpn_cls_fpn3: 0.010909, loss_rpn_cls_fpn4: 0.006012, loss_rpn_cls_fpn5: 0.003159, loss_rpn_cls_fpn6: 0.000986
+		loss_rpn_bbox_fpn2: 0.027957, loss_rpn_bbox_fpn3: 0.007806, loss_rpn_bbox_fpn4: 0.005734, loss_rpn_bbox_fpn5: 0.006393, loss_rpn_bbox_fpn6: 0.009417
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13601 / 20000]
+		loss: 1.200486, lr: 0.020000 time: 5.256749, eta: 9:20:43
+		accuracy_cls: 0.891607
+		loss_cls: 0.323062, loss_bbox: 0.154285, loss_mask: 0.290716, loss_boundary: 0.309649
+		loss_rpn_cls: 0.043980, loss_rpn_bbox: 0.062274
+		loss_rpn_cls_fpn2: 0.020102, loss_rpn_cls_fpn3: 0.010273, loss_rpn_cls_fpn4: 0.006783, loss_rpn_cls_fpn5: 0.003212, loss_rpn_cls_fpn6: 0.001106
+		loss_rpn_bbox_fpn2: 0.028800, loss_rpn_bbox_fpn3: 0.007000, loss_rpn_bbox_fpn4: 0.006872, loss_rpn_bbox_fpn5: 0.005960, loss_rpn_bbox_fpn6: 0.010276
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13621 / 20000]
+		loss: 1.066592, lr: 0.020000 time: 5.257178, eta: 9:19:00
+		accuracy_cls: 0.904051
+		loss_cls: 0.280625, loss_bbox: 0.134005, loss_mask: 0.270975, loss_boundary: 0.292568
+		loss_rpn_cls: 0.039352, loss_rpn_bbox: 0.050229
+		loss_rpn_cls_fpn2: 0.017034, loss_rpn_cls_fpn3: 0.009086, loss_rpn_cls_fpn4: 0.006767, loss_rpn_cls_fpn5: 0.003968, loss_rpn_cls_fpn6: 0.001251
+		loss_rpn_bbox_fpn2: 0.014237, loss_rpn_bbox_fpn3: 0.004573, loss_rpn_bbox_fpn4: 0.005984, loss_rpn_bbox_fpn5: 0.005659, loss_rpn_bbox_fpn6: 0.010123
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13641 / 20000]
+		loss: 1.164903, lr: 0.020000 time: 5.257840, eta: 9:17:19
+		accuracy_cls: 0.895647
+		loss_cls: 0.318269, loss_bbox: 0.151817, loss_mask: 0.287462, loss_boundary: 0.305041
+		loss_rpn_cls: 0.039408, loss_rpn_bbox: 0.058076
+		loss_rpn_cls_fpn2: 0.017653, loss_rpn_cls_fpn3: 0.008446, loss_rpn_cls_fpn4: 0.006397, loss_rpn_cls_fpn5: 0.003265, loss_rpn_cls_fpn6: 0.000539
+		loss_rpn_bbox_fpn2: 0.028587, loss_rpn_bbox_fpn3: 0.007556, loss_rpn_bbox_fpn4: 0.007739, loss_rpn_bbox_fpn5: 0.005003, loss_rpn_bbox_fpn6: 0.012428
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13661 / 20000]
+		loss: 1.227946, lr: 0.020000 time: 5.258725, eta: 9:15:40
+		accuracy_cls: 0.893006
+		loss_cls: 0.319435, loss_bbox: 0.163561, loss_mask: 0.304690, loss_boundary: 0.310591
+		loss_rpn_cls: 0.050323, loss_rpn_bbox: 0.080279
+		loss_rpn_cls_fpn2: 0.024285, loss_rpn_cls_fpn3: 0.009224, loss_rpn_cls_fpn4: 0.006415, loss_rpn_cls_fpn5: 0.004542, loss_rpn_cls_fpn6: 0.000893
+		loss_rpn_bbox_fpn2: 0.041018, loss_rpn_bbox_fpn3: 0.007736, loss_rpn_bbox_fpn4: 0.007626, loss_rpn_bbox_fpn5: 0.005934, loss_rpn_bbox_fpn6: 0.009083
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13681 / 20000]
+		loss: 1.112922, lr: 0.020000 time: 5.259083, eta: 9:13:57
+		accuracy_cls: 0.901003
+		loss_cls: 0.303371, loss_bbox: 0.135029, loss_mask: 0.281778, loss_boundary: 0.290491
+		loss_rpn_cls: 0.041746, loss_rpn_bbox: 0.052809
+		loss_rpn_cls_fpn2: 0.016782, loss_rpn_cls_fpn3: 0.012072, loss_rpn_cls_fpn4: 0.005476, loss_rpn_cls_fpn5: 0.003591, loss_rpn_cls_fpn6: 0.001001
+		loss_rpn_bbox_fpn2: 0.020991, loss_rpn_bbox_fpn3: 0.006442, loss_rpn_bbox_fpn4: 0.006869, loss_rpn_bbox_fpn5: 0.005742, loss_rpn_bbox_fpn6: 0.007418
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13701 / 20000]
+		loss: 1.085718, lr: 0.020000 time: 5.259445, eta: 9:12:14
+		accuracy_cls: 0.907420
+		loss_cls: 0.285313, loss_bbox: 0.130132, loss_mask: 0.276087, loss_boundary: 0.291294
+		loss_rpn_cls: 0.033074, loss_rpn_bbox: 0.056654
+		loss_rpn_cls_fpn2: 0.016799, loss_rpn_cls_fpn3: 0.006813, loss_rpn_cls_fpn4: 0.005209, loss_rpn_cls_fpn5: 0.003215, loss_rpn_cls_fpn6: 0.000930
+		loss_rpn_bbox_fpn2: 0.028455, loss_rpn_bbox_fpn3: 0.005901, loss_rpn_bbox_fpn4: 0.005580, loss_rpn_bbox_fpn5: 0.004088, loss_rpn_bbox_fpn6: 0.009290
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13721 / 20000]
+		loss: 1.100646, lr: 0.020000 time: 5.259960, eta: 9:10:32
+		accuracy_cls: 0.897307
+		loss_cls: 0.312583, loss_bbox: 0.151546, loss_mask: 0.288191, loss_boundary: 0.297645
+		loss_rpn_cls: 0.041308, loss_rpn_bbox: 0.054184
+		loss_rpn_cls_fpn2: 0.016678, loss_rpn_cls_fpn3: 0.009745, loss_rpn_cls_fpn4: 0.005758, loss_rpn_cls_fpn5: 0.004972, loss_rpn_cls_fpn6: 0.000932
+		loss_rpn_bbox_fpn2: 0.025740, loss_rpn_bbox_fpn3: 0.005562, loss_rpn_bbox_fpn4: 0.006279, loss_rpn_bbox_fpn5: 0.006090, loss_rpn_bbox_fpn6: 0.009787
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13741 / 20000]
+		loss: 1.196948, lr: 0.020000 time: 5.260523, eta: 9:08:50
+		accuracy_cls: 0.892458
+		loss_cls: 0.329657, loss_bbox: 0.151046, loss_mask: 0.278885, loss_boundary: 0.295652
+		loss_rpn_cls: 0.043547, loss_rpn_bbox: 0.064117
+		loss_rpn_cls_fpn2: 0.018856, loss_rpn_cls_fpn3: 0.011287, loss_rpn_cls_fpn4: 0.006440, loss_rpn_cls_fpn5: 0.004179, loss_rpn_cls_fpn6: 0.000506
+		loss_rpn_bbox_fpn2: 0.024776, loss_rpn_bbox_fpn3: 0.008676, loss_rpn_bbox_fpn4: 0.006132, loss_rpn_bbox_fpn5: 0.006014, loss_rpn_bbox_fpn6: 0.012033
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13761 / 20000]
+		loss: 1.161561, lr: 0.020000 time: 5.260926, eta: 9:07:08
+		accuracy_cls: 0.900720
+		loss_cls: 0.286927, loss_bbox: 0.144614, loss_mask: 0.280507, loss_boundary: 0.298089
+		loss_rpn_cls: 0.049373, loss_rpn_bbox: 0.062679
+		loss_rpn_cls_fpn2: 0.021590, loss_rpn_cls_fpn3: 0.009990, loss_rpn_cls_fpn4: 0.007074, loss_rpn_cls_fpn5: 0.004545, loss_rpn_cls_fpn6: 0.000784
+		loss_rpn_bbox_fpn2: 0.024852, loss_rpn_bbox_fpn3: 0.007581, loss_rpn_bbox_fpn4: 0.006680, loss_rpn_bbox_fpn5: 0.006634, loss_rpn_bbox_fpn6: 0.010495
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13781 / 20000]
+		loss: 1.155334, lr: 0.020000 time: 5.261146, eta: 9:05:24
+		accuracy_cls: 0.902463
+		loss_cls: 0.311129, loss_bbox: 0.138372, loss_mask: 0.288701, loss_boundary: 0.301992
+		loss_rpn_cls: 0.049496, loss_rpn_bbox: 0.063862
+		loss_rpn_cls_fpn2: 0.023660, loss_rpn_cls_fpn3: 0.011532, loss_rpn_cls_fpn4: 0.007543, loss_rpn_cls_fpn5: 0.004756, loss_rpn_cls_fpn6: 0.000981
+		loss_rpn_bbox_fpn2: 0.027850, loss_rpn_bbox_fpn3: 0.008779, loss_rpn_bbox_fpn4: 0.007132, loss_rpn_bbox_fpn5: 0.004772, loss_rpn_bbox_fpn6: 0.008679
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13801 / 20000]
+		loss: 1.199301, lr: 0.020000 time: 5.261773, eta: 9:03:42
+		accuracy_cls: 0.892575
+		loss_cls: 0.328031, loss_bbox: 0.144602, loss_mask: 0.293269, loss_boundary: 0.304335
+		loss_rpn_cls: 0.044212, loss_rpn_bbox: 0.061975
+		loss_rpn_cls_fpn2: 0.019626, loss_rpn_cls_fpn3: 0.009659, loss_rpn_cls_fpn4: 0.007148, loss_rpn_cls_fpn5: 0.004449, loss_rpn_cls_fpn6: 0.000997
+		loss_rpn_bbox_fpn2: 0.028916, loss_rpn_bbox_fpn3: 0.006373, loss_rpn_bbox_fpn4: 0.006000, loss_rpn_bbox_fpn5: 0.004337, loss_rpn_bbox_fpn6: 0.010829
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13821 / 20000]
+		loss: 1.156151, lr: 0.020000 time: 5.262058, eta: 9:01:59
+		accuracy_cls: 0.890183
+		loss_cls: 0.316163, loss_bbox: 0.156330, loss_mask: 0.281178, loss_boundary: 0.300255
+		loss_rpn_cls: 0.044033, loss_rpn_bbox: 0.061627
+		loss_rpn_cls_fpn2: 0.018406, loss_rpn_cls_fpn3: 0.011332, loss_rpn_cls_fpn4: 0.007017, loss_rpn_cls_fpn5: 0.003852, loss_rpn_cls_fpn6: 0.001124
+		loss_rpn_bbox_fpn2: 0.023223, loss_rpn_bbox_fpn3: 0.008433, loss_rpn_bbox_fpn4: 0.005932, loss_rpn_bbox_fpn5: 0.004797, loss_rpn_bbox_fpn6: 0.009151
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13841 / 20000]
+		loss: 1.073854, lr: 0.020000 time: 5.262449, eta: 9:00:16
+		accuracy_cls: 0.907690
+		loss_cls: 0.269146, loss_bbox: 0.129220, loss_mask: 0.275117, loss_boundary: 0.302157
+		loss_rpn_cls: 0.045904, loss_rpn_bbox: 0.068401
+		loss_rpn_cls_fpn2: 0.021810, loss_rpn_cls_fpn3: 0.009356, loss_rpn_cls_fpn4: 0.005432, loss_rpn_cls_fpn5: 0.004079, loss_rpn_cls_fpn6: 0.000894
+		loss_rpn_bbox_fpn2: 0.031386, loss_rpn_bbox_fpn3: 0.006657, loss_rpn_bbox_fpn4: 0.006750, loss_rpn_bbox_fpn5: 0.003815, loss_rpn_bbox_fpn6: 0.009555
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13861 / 20000]
+		loss: 1.091722, lr: 0.020000 time: 5.262840, eta: 8:58:33
+		accuracy_cls: 0.902132
+		loss_cls: 0.288756, loss_bbox: 0.133852, loss_mask: 0.275201, loss_boundary: 0.301509
+		loss_rpn_cls: 0.038803, loss_rpn_bbox: 0.065465
+		loss_rpn_cls_fpn2: 0.020073, loss_rpn_cls_fpn3: 0.008388, loss_rpn_cls_fpn4: 0.005561, loss_rpn_cls_fpn5: 0.004752, loss_rpn_cls_fpn6: 0.001043
+		loss_rpn_bbox_fpn2: 0.028463, loss_rpn_bbox_fpn3: 0.009138, loss_rpn_bbox_fpn4: 0.005592, loss_rpn_bbox_fpn5: 0.005739, loss_rpn_bbox_fpn6: 0.009435
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13881 / 20000]
+		loss: 1.145707, lr: 0.020000 time: 5.263251, eta: 8:56:51
+		accuracy_cls: 0.898645
+		loss_cls: 0.295578, loss_bbox: 0.144965, loss_mask: 0.290125, loss_boundary: 0.306507
+		loss_rpn_cls: 0.037102, loss_rpn_bbox: 0.059682
+		loss_rpn_cls_fpn2: 0.019249, loss_rpn_cls_fpn3: 0.008370, loss_rpn_cls_fpn4: 0.004762, loss_rpn_cls_fpn5: 0.003298, loss_rpn_cls_fpn6: 0.000507
+		loss_rpn_bbox_fpn2: 0.028997, loss_rpn_bbox_fpn3: 0.008072, loss_rpn_bbox_fpn4: 0.006024, loss_rpn_bbox_fpn5: 0.004202, loss_rpn_bbox_fpn6: 0.007831
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13901 / 20000]
+		loss: 1.153441, lr: 0.020000 time: 5.263620, eta: 8:55:08
+		accuracy_cls: 0.903535
+		loss_cls: 0.302434, loss_bbox: 0.146452, loss_mask: 0.281281, loss_boundary: 0.297953
+		loss_rpn_cls: 0.045901, loss_rpn_bbox: 0.058765
+		loss_rpn_cls_fpn2: 0.020586, loss_rpn_cls_fpn3: 0.010237, loss_rpn_cls_fpn4: 0.005184, loss_rpn_cls_fpn5: 0.003672, loss_rpn_cls_fpn6: 0.000776
+		loss_rpn_bbox_fpn2: 0.025136, loss_rpn_bbox_fpn3: 0.007349, loss_rpn_bbox_fpn4: 0.006962, loss_rpn_bbox_fpn5: 0.003536, loss_rpn_bbox_fpn6: 0.010761
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13921 / 20000]
+		loss: 1.110590, lr: 0.020000 time: 5.263992, eta: 8:53:25
+		accuracy_cls: 0.906130
+		loss_cls: 0.302951, loss_bbox: 0.137616, loss_mask: 0.288541, loss_boundary: 0.308851
+		loss_rpn_cls: 0.042406, loss_rpn_bbox: 0.059652
+		loss_rpn_cls_fpn2: 0.020405, loss_rpn_cls_fpn3: 0.007945, loss_rpn_cls_fpn4: 0.006277, loss_rpn_cls_fpn5: 0.003989, loss_rpn_cls_fpn6: 0.001124
+		loss_rpn_bbox_fpn2: 0.031902, loss_rpn_bbox_fpn3: 0.008017, loss_rpn_bbox_fpn4: 0.005834, loss_rpn_bbox_fpn5: 0.006056, loss_rpn_bbox_fpn6: 0.007889
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13941 / 20000]
+		loss: 1.154729, lr: 0.020000 time: 5.264393, eta: 8:51:42
+		accuracy_cls: 0.892682
+		loss_cls: 0.327819, loss_bbox: 0.147673, loss_mask: 0.290094, loss_boundary: 0.311867
+		loss_rpn_cls: 0.042755, loss_rpn_bbox: 0.060743
+		loss_rpn_cls_fpn2: 0.017091, loss_rpn_cls_fpn3: 0.009660, loss_rpn_cls_fpn4: 0.008991, loss_rpn_cls_fpn5: 0.003777, loss_rpn_cls_fpn6: 0.000560
+		loss_rpn_bbox_fpn2: 0.029926, loss_rpn_bbox_fpn3: 0.007604, loss_rpn_bbox_fpn4: 0.006645, loss_rpn_bbox_fpn5: 0.004379, loss_rpn_bbox_fpn6: 0.010137
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13961 / 20000]
+		loss: 1.092585, lr: 0.020000 time: 5.264932, eta: 8:50:00
+		accuracy_cls: 0.901929
+		loss_cls: 0.288948, loss_bbox: 0.136479, loss_mask: 0.278931, loss_boundary: 0.306322
+		loss_rpn_cls: 0.038911, loss_rpn_bbox: 0.066944
+		loss_rpn_cls_fpn2: 0.017634, loss_rpn_cls_fpn3: 0.007944, loss_rpn_cls_fpn4: 0.005519, loss_rpn_cls_fpn5: 0.003419, loss_rpn_cls_fpn6: 0.000970
+		loss_rpn_bbox_fpn2: 0.029926, loss_rpn_bbox_fpn3: 0.007501, loss_rpn_bbox_fpn4: 0.006239, loss_rpn_bbox_fpn5: 0.004668, loss_rpn_bbox_fpn6: 0.009700
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 13981 / 20000]
+		loss: 1.082589, lr: 0.020000 time: 5.265446, eta: 8:48:17
+		accuracy_cls: 0.903262
+		loss_cls: 0.289190, loss_bbox: 0.137776, loss_mask: 0.262982, loss_boundary: 0.293421
+		loss_rpn_cls: 0.040924, loss_rpn_bbox: 0.054697
+		loss_rpn_cls_fpn2: 0.016750, loss_rpn_cls_fpn3: 0.008648, loss_rpn_cls_fpn4: 0.005155, loss_rpn_cls_fpn5: 0.003970, loss_rpn_cls_fpn6: 0.001008
+		loss_rpn_bbox_fpn2: 0.023122, loss_rpn_bbox_fpn3: 0.007788, loss_rpn_bbox_fpn4: 0.006833, loss_rpn_bbox_fpn5: 0.005262, loss_rpn_bbox_fpn6: 0.008574
+INFO train_net_step.py: 346: Decay the learning on step 14000
+INFO net.py:  72: Changing learning rate 0.020000 -> 0.002000
+INFO net.py:  97: Scaling update history by 0.100000 (new lr / old lr)
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14001 / 20000]
+		loss: 1.165584, lr: 0.002000 time: 5.265575, eta: 8:46:33
+		accuracy_cls: 0.899823
+		loss_cls: 0.310304, loss_bbox: 0.138135, loss_mask: 0.295413, loss_boundary: 0.304106
+		loss_rpn_cls: 0.044696, loss_rpn_bbox: 0.064323
+		loss_rpn_cls_fpn2: 0.022407, loss_rpn_cls_fpn3: 0.009053, loss_rpn_cls_fpn4: 0.005402, loss_rpn_cls_fpn5: 0.004578, loss_rpn_cls_fpn6: 0.000947
+		loss_rpn_bbox_fpn2: 0.030426, loss_rpn_bbox_fpn3: 0.005982, loss_rpn_bbox_fpn4: 0.005218, loss_rpn_bbox_fpn5: 0.004210, loss_rpn_bbox_fpn6: 0.009210
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14021 / 20000]
+		loss: 1.148546, lr: 0.002000 time: 5.266259, eta: 8:44:52
+		accuracy_cls: 0.895677
+		loss_cls: 0.299460, loss_bbox: 0.154602, loss_mask: 0.292527, loss_boundary: 0.307876
+		loss_rpn_cls: 0.040553, loss_rpn_bbox: 0.054839
+		loss_rpn_cls_fpn2: 0.017559, loss_rpn_cls_fpn3: 0.007422, loss_rpn_cls_fpn4: 0.005918, loss_rpn_cls_fpn5: 0.004418, loss_rpn_cls_fpn6: 0.000969
+		loss_rpn_bbox_fpn2: 0.022772, loss_rpn_bbox_fpn3: 0.006968, loss_rpn_bbox_fpn4: 0.006464, loss_rpn_bbox_fpn5: 0.005108, loss_rpn_bbox_fpn6: 0.010579
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14041 / 20000]
+		loss: 1.111330, lr: 0.002000 time: 5.266672, eta: 8:43:09
+		accuracy_cls: 0.901826
+		loss_cls: 0.290198, loss_bbox: 0.150894, loss_mask: 0.273764, loss_boundary: 0.301336
+		loss_rpn_cls: 0.041401, loss_rpn_bbox: 0.072116
+		loss_rpn_cls_fpn2: 0.021733, loss_rpn_cls_fpn3: 0.007862, loss_rpn_cls_fpn4: 0.005554, loss_rpn_cls_fpn5: 0.003000, loss_rpn_cls_fpn6: 0.000719
+		loss_rpn_bbox_fpn2: 0.035630, loss_rpn_bbox_fpn3: 0.008221, loss_rpn_bbox_fpn4: 0.006782, loss_rpn_bbox_fpn5: 0.003669, loss_rpn_bbox_fpn6: 0.007758
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14061 / 20000]
+		loss: 1.096784, lr: 0.002000 time: 5.266982, eta: 8:41:25
+		accuracy_cls: 0.906052
+		loss_cls: 0.272374, loss_bbox: 0.143465, loss_mask: 0.273847, loss_boundary: 0.292803
+		loss_rpn_cls: 0.035062, loss_rpn_bbox: 0.057273
+		loss_rpn_cls_fpn2: 0.016082, loss_rpn_cls_fpn3: 0.008270, loss_rpn_cls_fpn4: 0.004734, loss_rpn_cls_fpn5: 0.003423, loss_rpn_cls_fpn6: 0.000854
+		loss_rpn_bbox_fpn2: 0.024123, loss_rpn_bbox_fpn3: 0.005508, loss_rpn_bbox_fpn4: 0.004670, loss_rpn_bbox_fpn5: 0.003476, loss_rpn_bbox_fpn6: 0.009997
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14081 / 20000]
+		loss: 1.098455, lr: 0.002000 time: 5.267531, eta: 8:39:43
+		accuracy_cls: 0.899133
+		loss_cls: 0.290052, loss_bbox: 0.145403, loss_mask: 0.279747, loss_boundary: 0.292947
+		loss_rpn_cls: 0.037338, loss_rpn_bbox: 0.050070
+		loss_rpn_cls_fpn2: 0.015724, loss_rpn_cls_fpn3: 0.008329, loss_rpn_cls_fpn4: 0.004914, loss_rpn_cls_fpn5: 0.004339, loss_rpn_cls_fpn6: 0.001250
+		loss_rpn_bbox_fpn2: 0.019422, loss_rpn_bbox_fpn3: 0.004742, loss_rpn_bbox_fpn4: 0.005665, loss_rpn_bbox_fpn5: 0.005384, loss_rpn_bbox_fpn6: 0.007983
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14101 / 20000]
+		loss: 1.124175, lr: 0.002000 time: 5.268222, eta: 8:38:02
+		accuracy_cls: 0.901237
+		loss_cls: 0.289298, loss_bbox: 0.147510, loss_mask: 0.286035, loss_boundary: 0.300659
+		loss_rpn_cls: 0.038124, loss_rpn_bbox: 0.054130
+		loss_rpn_cls_fpn2: 0.016260, loss_rpn_cls_fpn3: 0.007580, loss_rpn_cls_fpn4: 0.005904, loss_rpn_cls_fpn5: 0.003234, loss_rpn_cls_fpn6: 0.000722
+		loss_rpn_bbox_fpn2: 0.020004, loss_rpn_bbox_fpn3: 0.006435, loss_rpn_bbox_fpn4: 0.004754, loss_rpn_bbox_fpn5: 0.005319, loss_rpn_bbox_fpn6: 0.010520
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14121 / 20000]
+		loss: 1.083811, lr: 0.002000 time: 5.268679, eta: 8:36:19
+		accuracy_cls: 0.903114
+		loss_cls: 0.280892, loss_bbox: 0.135880, loss_mask: 0.278016, loss_boundary: 0.297673
+		loss_rpn_cls: 0.034418, loss_rpn_bbox: 0.056317
+		loss_rpn_cls_fpn2: 0.017440, loss_rpn_cls_fpn3: 0.006989, loss_rpn_cls_fpn4: 0.004318, loss_rpn_cls_fpn5: 0.004588, loss_rpn_cls_fpn6: 0.000825
+		loss_rpn_bbox_fpn2: 0.026189, loss_rpn_bbox_fpn3: 0.005930, loss_rpn_bbox_fpn4: 0.004174, loss_rpn_bbox_fpn5: 0.003949, loss_rpn_bbox_fpn6: 0.006202
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14141 / 20000]
+		loss: 1.097127, lr: 0.002000 time: 5.269011, eta: 8:34:36
+		accuracy_cls: 0.904161
+		loss_cls: 0.285948, loss_bbox: 0.154459, loss_mask: 0.275932, loss_boundary: 0.296739
+		loss_rpn_cls: 0.034798, loss_rpn_bbox: 0.048568
+		loss_rpn_cls_fpn2: 0.014510, loss_rpn_cls_fpn3: 0.008064, loss_rpn_cls_fpn4: 0.005194, loss_rpn_cls_fpn5: 0.004504, loss_rpn_cls_fpn6: 0.000752
+		loss_rpn_bbox_fpn2: 0.018987, loss_rpn_bbox_fpn3: 0.006395, loss_rpn_bbox_fpn4: 0.005000, loss_rpn_bbox_fpn5: 0.004654, loss_rpn_bbox_fpn6: 0.009900
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14161 / 20000]
+		loss: 1.141574, lr: 0.002000 time: 5.269930, eta: 8:32:56
+		accuracy_cls: 0.894715
+		loss_cls: 0.296712, loss_bbox: 0.145629, loss_mask: 0.285754, loss_boundary: 0.300968
+		loss_rpn_cls: 0.039930, loss_rpn_bbox: 0.057800
+		loss_rpn_cls_fpn2: 0.017412, loss_rpn_cls_fpn3: 0.007624, loss_rpn_cls_fpn4: 0.004719, loss_rpn_cls_fpn5: 0.003091, loss_rpn_cls_fpn6: 0.000824
+		loss_rpn_bbox_fpn2: 0.026380, loss_rpn_bbox_fpn3: 0.007118, loss_rpn_bbox_fpn4: 0.007360, loss_rpn_bbox_fpn5: 0.004684, loss_rpn_bbox_fpn6: 0.008581
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14181 / 20000]
+		loss: 1.102897, lr: 0.002000 time: 5.270608, eta: 8:31:14
+		accuracy_cls: 0.899327
+		loss_cls: 0.296598, loss_bbox: 0.130152, loss_mask: 0.268458, loss_boundary: 0.298192
+		loss_rpn_cls: 0.036328, loss_rpn_bbox: 0.060442
+		loss_rpn_cls_fpn2: 0.017915, loss_rpn_cls_fpn3: 0.008412, loss_rpn_cls_fpn4: 0.005306, loss_rpn_cls_fpn5: 0.004316, loss_rpn_cls_fpn6: 0.000706
+		loss_rpn_bbox_fpn2: 0.033100, loss_rpn_bbox_fpn3: 0.006791, loss_rpn_bbox_fpn4: 0.006655, loss_rpn_bbox_fpn5: 0.004633, loss_rpn_bbox_fpn6: 0.011302
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14201 / 20000]
+		loss: 1.016736, lr: 0.002000 time: 5.271123, eta: 8:29:32
+		accuracy_cls: 0.914337
+		loss_cls: 0.272910, loss_bbox: 0.128516, loss_mask: 0.266501, loss_boundary: 0.286921
+		loss_rpn_cls: 0.036257, loss_rpn_bbox: 0.046757
+		loss_rpn_cls_fpn2: 0.014950, loss_rpn_cls_fpn3: 0.007230, loss_rpn_cls_fpn4: 0.006628, loss_rpn_cls_fpn5: 0.002885, loss_rpn_cls_fpn6: 0.000743
+		loss_rpn_bbox_fpn2: 0.021551, loss_rpn_bbox_fpn3: 0.005932, loss_rpn_bbox_fpn4: 0.004347, loss_rpn_bbox_fpn5: 0.003863, loss_rpn_bbox_fpn6: 0.006220
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14221 / 20000]
+		loss: 1.140799, lr: 0.002000 time: 5.271676, eta: 8:27:50
+		accuracy_cls: 0.901059
+		loss_cls: 0.281456, loss_bbox: 0.160231, loss_mask: 0.282026, loss_boundary: 0.296155
+		loss_rpn_cls: 0.042216, loss_rpn_bbox: 0.056044
+		loss_rpn_cls_fpn2: 0.017918, loss_rpn_cls_fpn3: 0.010014, loss_rpn_cls_fpn4: 0.005436, loss_rpn_cls_fpn5: 0.004070, loss_rpn_cls_fpn6: 0.000610
+		loss_rpn_bbox_fpn2: 0.024457, loss_rpn_bbox_fpn3: 0.007148, loss_rpn_bbox_fpn4: 0.005406, loss_rpn_bbox_fpn5: 0.004442, loss_rpn_bbox_fpn6: 0.007477
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14241 / 20000]
+		loss: 1.092764, lr: 0.002000 time: 5.272082, eta: 8:26:07
+		accuracy_cls: 0.903048
+		loss_cls: 0.284521, loss_bbox: 0.150436, loss_mask: 0.285981, loss_boundary: 0.301747
+		loss_rpn_cls: 0.030451, loss_rpn_bbox: 0.059648
+		loss_rpn_cls_fpn2: 0.013346, loss_rpn_cls_fpn3: 0.007531, loss_rpn_cls_fpn4: 0.005246, loss_rpn_cls_fpn5: 0.003351, loss_rpn_cls_fpn6: 0.000668
+		loss_rpn_bbox_fpn2: 0.024009, loss_rpn_bbox_fpn3: 0.005259, loss_rpn_bbox_fpn4: 0.005940, loss_rpn_bbox_fpn5: 0.003958, loss_rpn_bbox_fpn6: 0.006762
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14261 / 20000]
+		loss: 1.078767, lr: 0.002000 time: 5.272572, eta: 8:24:24
+		accuracy_cls: 0.901313
+		loss_cls: 0.278846, loss_bbox: 0.136715, loss_mask: 0.281775, loss_boundary: 0.295438
+		loss_rpn_cls: 0.038500, loss_rpn_bbox: 0.064662
+		loss_rpn_cls_fpn2: 0.017865, loss_rpn_cls_fpn3: 0.007657, loss_rpn_cls_fpn4: 0.005118, loss_rpn_cls_fpn5: 0.003580, loss_rpn_cls_fpn6: 0.000714
+		loss_rpn_bbox_fpn2: 0.025916, loss_rpn_bbox_fpn3: 0.006205, loss_rpn_bbox_fpn4: 0.006278, loss_rpn_bbox_fpn5: 0.005007, loss_rpn_bbox_fpn6: 0.007915
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14281 / 20000]
+		loss: 1.117079, lr: 0.002000 time: 5.273401, eta: 8:22:43
+		accuracy_cls: 0.901936
+		loss_cls: 0.286074, loss_bbox: 0.143634, loss_mask: 0.284000, loss_boundary: 0.302908
+		loss_rpn_cls: 0.036696, loss_rpn_bbox: 0.053042
+		loss_rpn_cls_fpn2: 0.019204, loss_rpn_cls_fpn3: 0.009025, loss_rpn_cls_fpn4: 0.005834, loss_rpn_cls_fpn5: 0.003389, loss_rpn_cls_fpn6: 0.001072
+		loss_rpn_bbox_fpn2: 0.023644, loss_rpn_bbox_fpn3: 0.006117, loss_rpn_bbox_fpn4: 0.006453, loss_rpn_bbox_fpn5: 0.004125, loss_rpn_bbox_fpn6: 0.009464
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14301 / 20000]
+		loss: 1.034617, lr: 0.002000 time: 5.273839, eta: 8:21:00
+		accuracy_cls: 0.912970
+		loss_cls: 0.266063, loss_bbox: 0.128332, loss_mask: 0.271499, loss_boundary: 0.296075
+		loss_rpn_cls: 0.027671, loss_rpn_bbox: 0.048093
+		loss_rpn_cls_fpn2: 0.013698, loss_rpn_cls_fpn3: 0.007116, loss_rpn_cls_fpn4: 0.004475, loss_rpn_cls_fpn5: 0.003504, loss_rpn_cls_fpn6: 0.000946
+		loss_rpn_bbox_fpn2: 0.016121, loss_rpn_bbox_fpn3: 0.005621, loss_rpn_bbox_fpn4: 0.005775, loss_rpn_bbox_fpn5: 0.003707, loss_rpn_bbox_fpn6: 0.010127
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14321 / 20000]
+		loss: 1.072296, lr: 0.002000 time: 5.274267, eta: 8:19:17
+		accuracy_cls: 0.910942
+		loss_cls: 0.267248, loss_bbox: 0.127933, loss_mask: 0.264407, loss_boundary: 0.287857
+		loss_rpn_cls: 0.034454, loss_rpn_bbox: 0.053553
+		loss_rpn_cls_fpn2: 0.014844, loss_rpn_cls_fpn3: 0.007820, loss_rpn_cls_fpn4: 0.004040, loss_rpn_cls_fpn5: 0.003263, loss_rpn_cls_fpn6: 0.000628
+		loss_rpn_bbox_fpn2: 0.027941, loss_rpn_bbox_fpn3: 0.006366, loss_rpn_bbox_fpn4: 0.004876, loss_rpn_bbox_fpn5: 0.003166, loss_rpn_bbox_fpn6: 0.006178
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14341 / 20000]
+		loss: 1.072624, lr: 0.002000 time: 5.274760, eta: 8:17:35
+		accuracy_cls: 0.907144
+		loss_cls: 0.271755, loss_bbox: 0.139472, loss_mask: 0.278845, loss_boundary: 0.298162
+		loss_rpn_cls: 0.033608, loss_rpn_bbox: 0.057844
+		loss_rpn_cls_fpn2: 0.015699, loss_rpn_cls_fpn3: 0.007556, loss_rpn_cls_fpn4: 0.005072, loss_rpn_cls_fpn5: 0.003648, loss_rpn_cls_fpn6: 0.000592
+		loss_rpn_bbox_fpn2: 0.030322, loss_rpn_bbox_fpn3: 0.006057, loss_rpn_bbox_fpn4: 0.004563, loss_rpn_bbox_fpn5: 0.003809, loss_rpn_bbox_fpn6: 0.008912
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14361 / 20000]
+		loss: 1.028449, lr: 0.002000 time: 5.275086, eta: 8:15:51
+		accuracy_cls: 0.910879
+		loss_cls: 0.265717, loss_bbox: 0.124097, loss_mask: 0.271370, loss_boundary: 0.292659
+		loss_rpn_cls: 0.027414, loss_rpn_bbox: 0.040390
+		loss_rpn_cls_fpn2: 0.013064, loss_rpn_cls_fpn3: 0.005674, loss_rpn_cls_fpn4: 0.004102, loss_rpn_cls_fpn5: 0.003305, loss_rpn_cls_fpn6: 0.000579
+		loss_rpn_bbox_fpn2: 0.020024, loss_rpn_bbox_fpn3: 0.005047, loss_rpn_bbox_fpn4: 0.004271, loss_rpn_bbox_fpn5: 0.003787, loss_rpn_bbox_fpn6: 0.010596
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14381 / 20000]
+		loss: 1.103113, lr: 0.002000 time: 5.275638, eta: 8:14:09
+		accuracy_cls: 0.898715
+		loss_cls: 0.295893, loss_bbox: 0.144588, loss_mask: 0.280033, loss_boundary: 0.299098
+		loss_rpn_cls: 0.041368, loss_rpn_bbox: 0.046735
+		loss_rpn_cls_fpn2: 0.016836, loss_rpn_cls_fpn3: 0.008414, loss_rpn_cls_fpn4: 0.007010, loss_rpn_cls_fpn5: 0.003920, loss_rpn_cls_fpn6: 0.000628
+		loss_rpn_bbox_fpn2: 0.019292, loss_rpn_bbox_fpn3: 0.007008, loss_rpn_bbox_fpn4: 0.007295, loss_rpn_bbox_fpn5: 0.004450, loss_rpn_bbox_fpn6: 0.007311
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14401 / 20000]
+		loss: 1.073674, lr: 0.002000 time: 5.275843, eta: 8:12:24
+		accuracy_cls: 0.909356
+		loss_cls: 0.266581, loss_bbox: 0.126848, loss_mask: 0.280081, loss_boundary: 0.302139
+		loss_rpn_cls: 0.032725, loss_rpn_bbox: 0.056357
+		loss_rpn_cls_fpn2: 0.016466, loss_rpn_cls_fpn3: 0.006144, loss_rpn_cls_fpn4: 0.004733, loss_rpn_cls_fpn5: 0.003387, loss_rpn_cls_fpn6: 0.000942
+		loss_rpn_bbox_fpn2: 0.030498, loss_rpn_bbox_fpn3: 0.005617, loss_rpn_bbox_fpn4: 0.005397, loss_rpn_bbox_fpn5: 0.003788, loss_rpn_bbox_fpn6: 0.007660
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14421 / 20000]
+		loss: 0.994951, lr: 0.002000 time: 5.276274, eta: 8:10:41
+		accuracy_cls: 0.906020
+		loss_cls: 0.266505, loss_bbox: 0.124751, loss_mask: 0.263040, loss_boundary: 0.285493
+		loss_rpn_cls: 0.029971, loss_rpn_bbox: 0.044151
+		loss_rpn_cls_fpn2: 0.012788, loss_rpn_cls_fpn3: 0.007396, loss_rpn_cls_fpn4: 0.004595, loss_rpn_cls_fpn5: 0.003493, loss_rpn_cls_fpn6: 0.000613
+		loss_rpn_bbox_fpn2: 0.023574, loss_rpn_bbox_fpn3: 0.003855, loss_rpn_bbox_fpn4: 0.006017, loss_rpn_bbox_fpn5: 0.003491, loss_rpn_bbox_fpn6: 0.007451
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14441 / 20000]
+		loss: 1.072691, lr: 0.002000 time: 5.276501, eta: 8:08:57
+		accuracy_cls: 0.907598
+		loss_cls: 0.259225, loss_bbox: 0.132544, loss_mask: 0.282693, loss_boundary: 0.300671
+		loss_rpn_cls: 0.035441, loss_rpn_bbox: 0.049766
+		loss_rpn_cls_fpn2: 0.015739, loss_rpn_cls_fpn3: 0.007650, loss_rpn_cls_fpn4: 0.006607, loss_rpn_cls_fpn5: 0.002707, loss_rpn_cls_fpn6: 0.000562
+		loss_rpn_bbox_fpn2: 0.023165, loss_rpn_bbox_fpn3: 0.005559, loss_rpn_bbox_fpn4: 0.004702, loss_rpn_bbox_fpn5: 0.003451, loss_rpn_bbox_fpn6: 0.008629
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14461 / 20000]
+		loss: 1.094815, lr: 0.002000 time: 5.277058, eta: 8:07:14
+		accuracy_cls: 0.899517
+		loss_cls: 0.278002, loss_bbox: 0.153035, loss_mask: 0.279967, loss_boundary: 0.296027
+		loss_rpn_cls: 0.036938, loss_rpn_bbox: 0.058886
+		loss_rpn_cls_fpn2: 0.018627, loss_rpn_cls_fpn3: 0.006753, loss_rpn_cls_fpn4: 0.004339, loss_rpn_cls_fpn5: 0.003256, loss_rpn_cls_fpn6: 0.000515
+		loss_rpn_bbox_fpn2: 0.028661, loss_rpn_bbox_fpn3: 0.007115, loss_rpn_bbox_fpn4: 0.005739, loss_rpn_bbox_fpn5: 0.004444, loss_rpn_bbox_fpn6: 0.006944
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14481 / 20000]
+		loss: 1.051418, lr: 0.002000 time: 5.277574, eta: 8:05:32
+		accuracy_cls: 0.908122
+		loss_cls: 0.272842, loss_bbox: 0.135233, loss_mask: 0.264018, loss_boundary: 0.289250
+		loss_rpn_cls: 0.032350, loss_rpn_bbox: 0.047788
+		loss_rpn_cls_fpn2: 0.013257, loss_rpn_cls_fpn3: 0.006942, loss_rpn_cls_fpn4: 0.005590, loss_rpn_cls_fpn5: 0.003222, loss_rpn_cls_fpn6: 0.000944
+		loss_rpn_bbox_fpn2: 0.022138, loss_rpn_bbox_fpn3: 0.006022, loss_rpn_bbox_fpn4: 0.006554, loss_rpn_bbox_fpn5: 0.003685, loss_rpn_bbox_fpn6: 0.007700
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14501 / 20000]
+		loss: 1.045205, lr: 0.002000 time: 5.278124, eta: 8:03:49
+		accuracy_cls: 0.902752
+		loss_cls: 0.265356, loss_bbox: 0.136978, loss_mask: 0.261565, loss_boundary: 0.288730
+		loss_rpn_cls: 0.039929, loss_rpn_bbox: 0.049215
+		loss_rpn_cls_fpn2: 0.020894, loss_rpn_cls_fpn3: 0.007549, loss_rpn_cls_fpn4: 0.005003, loss_rpn_cls_fpn5: 0.003689, loss_rpn_cls_fpn6: 0.000889
+		loss_rpn_bbox_fpn2: 0.021563, loss_rpn_bbox_fpn3: 0.004644, loss_rpn_bbox_fpn4: 0.005580, loss_rpn_bbox_fpn5: 0.004079, loss_rpn_bbox_fpn6: 0.009820
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14521 / 20000]
+		loss: 1.135235, lr: 0.002000 time: 5.278554, eta: 8:02:06
+		accuracy_cls: 0.898076
+		loss_cls: 0.301460, loss_bbox: 0.145021, loss_mask: 0.269891, loss_boundary: 0.302250
+		loss_rpn_cls: 0.037204, loss_rpn_bbox: 0.057982
+		loss_rpn_cls_fpn2: 0.017820, loss_rpn_cls_fpn3: 0.006298, loss_rpn_cls_fpn4: 0.004725, loss_rpn_cls_fpn5: 0.003480, loss_rpn_cls_fpn6: 0.000862
+		loss_rpn_bbox_fpn2: 0.030042, loss_rpn_bbox_fpn3: 0.005245, loss_rpn_bbox_fpn4: 0.005532, loss_rpn_bbox_fpn5: 0.003521, loss_rpn_bbox_fpn6: 0.008720
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14541 / 20000]
+		loss: 1.029652, lr: 0.002000 time: 5.278960, eta: 8:00:23
+		accuracy_cls: 0.908163
+		loss_cls: 0.272510, loss_bbox: 0.134576, loss_mask: 0.273255, loss_boundary: 0.297802
+		loss_rpn_cls: 0.028823, loss_rpn_bbox: 0.045519
+		loss_rpn_cls_fpn2: 0.013817, loss_rpn_cls_fpn3: 0.006828, loss_rpn_cls_fpn4: 0.005242, loss_rpn_cls_fpn5: 0.003279, loss_rpn_cls_fpn6: 0.000569
+		loss_rpn_bbox_fpn2: 0.014796, loss_rpn_bbox_fpn3: 0.006529, loss_rpn_bbox_fpn4: 0.008257, loss_rpn_bbox_fpn5: 0.004228, loss_rpn_bbox_fpn6: 0.007124
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14561 / 20000]
+		loss: 1.083885, lr: 0.002000 time: 5.279469, eta: 7:58:40
+		accuracy_cls: 0.904784
+		loss_cls: 0.277888, loss_bbox: 0.144115, loss_mask: 0.271408, loss_boundary: 0.293887
+		loss_rpn_cls: 0.032324, loss_rpn_bbox: 0.060507
+		loss_rpn_cls_fpn2: 0.014931, loss_rpn_cls_fpn3: 0.008285, loss_rpn_cls_fpn4: 0.004071, loss_rpn_cls_fpn5: 0.002950, loss_rpn_cls_fpn6: 0.000791
+		loss_rpn_bbox_fpn2: 0.027909, loss_rpn_bbox_fpn3: 0.007013, loss_rpn_bbox_fpn4: 0.004124, loss_rpn_bbox_fpn5: 0.003509, loss_rpn_bbox_fpn6: 0.007054
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14581 / 20000]
+		loss: 1.052784, lr: 0.002000 time: 5.279859, eta: 7:56:56
+		accuracy_cls: 0.904703
+		loss_cls: 0.277700, loss_bbox: 0.125729, loss_mask: 0.267373, loss_boundary: 0.291835
+		loss_rpn_cls: 0.035887, loss_rpn_bbox: 0.053477
+		loss_rpn_cls_fpn2: 0.014246, loss_rpn_cls_fpn3: 0.008050, loss_rpn_cls_fpn4: 0.006312, loss_rpn_cls_fpn5: 0.003630, loss_rpn_cls_fpn6: 0.001016
+		loss_rpn_bbox_fpn2: 0.021326, loss_rpn_bbox_fpn3: 0.005382, loss_rpn_bbox_fpn4: 0.005365, loss_rpn_bbox_fpn5: 0.004720, loss_rpn_bbox_fpn6: 0.008308
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14601 / 20000]
+		loss: 1.102346, lr: 0.002000 time: 5.280232, eta: 7:55:13
+		accuracy_cls: 0.902121
+		loss_cls: 0.271429, loss_bbox: 0.139262, loss_mask: 0.282303, loss_boundary: 0.299001
+		loss_rpn_cls: 0.033782, loss_rpn_bbox: 0.054395
+		loss_rpn_cls_fpn2: 0.014279, loss_rpn_cls_fpn3: 0.007188, loss_rpn_cls_fpn4: 0.005765, loss_rpn_cls_fpn5: 0.002964, loss_rpn_cls_fpn6: 0.001350
+		loss_rpn_bbox_fpn2: 0.024756, loss_rpn_bbox_fpn3: 0.006363, loss_rpn_bbox_fpn4: 0.006203, loss_rpn_bbox_fpn5: 0.004589, loss_rpn_bbox_fpn6: 0.007572
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14621 / 20000]
+		loss: 1.081093, lr: 0.002000 time: 5.280815, eta: 7:53:30
+		accuracy_cls: 0.898759
+		loss_cls: 0.295584, loss_bbox: 0.137179, loss_mask: 0.263315, loss_boundary: 0.289473
+		loss_rpn_cls: 0.030029, loss_rpn_bbox: 0.041430
+		loss_rpn_cls_fpn2: 0.012708, loss_rpn_cls_fpn3: 0.007295, loss_rpn_cls_fpn4: 0.005553, loss_rpn_cls_fpn5: 0.003302, loss_rpn_cls_fpn6: 0.000724
+		loss_rpn_bbox_fpn2: 0.017823, loss_rpn_bbox_fpn3: 0.005620, loss_rpn_bbox_fpn4: 0.004625, loss_rpn_bbox_fpn5: 0.005145, loss_rpn_bbox_fpn6: 0.008364
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14641 / 20000]
+		loss: 1.128967, lr: 0.002000 time: 5.281440, eta: 7:51:48
+		accuracy_cls: 0.894908
+		loss_cls: 0.298129, loss_bbox: 0.160639, loss_mask: 0.288709, loss_boundary: 0.302506
+		loss_rpn_cls: 0.030711, loss_rpn_bbox: 0.058560
+		loss_rpn_cls_fpn2: 0.014865, loss_rpn_cls_fpn3: 0.007687, loss_rpn_cls_fpn4: 0.005339, loss_rpn_cls_fpn5: 0.003169, loss_rpn_cls_fpn6: 0.000654
+		loss_rpn_bbox_fpn2: 0.021593, loss_rpn_bbox_fpn3: 0.006870, loss_rpn_bbox_fpn4: 0.005656, loss_rpn_bbox_fpn5: 0.004724, loss_rpn_bbox_fpn6: 0.009728
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14661 / 20000]
+		loss: 1.062416, lr: 0.002000 time: 5.281903, eta: 7:50:05
+		accuracy_cls: 0.904154
+		loss_cls: 0.262482, loss_bbox: 0.142919, loss_mask: 0.272792, loss_boundary: 0.298239
+		loss_rpn_cls: 0.032068, loss_rpn_bbox: 0.055714
+		loss_rpn_cls_fpn2: 0.013950, loss_rpn_cls_fpn3: 0.007489, loss_rpn_cls_fpn4: 0.003912, loss_rpn_cls_fpn5: 0.003199, loss_rpn_cls_fpn6: 0.000668
+		loss_rpn_bbox_fpn2: 0.035766, loss_rpn_bbox_fpn3: 0.004277, loss_rpn_bbox_fpn4: 0.004099, loss_rpn_bbox_fpn5: 0.003013, loss_rpn_bbox_fpn6: 0.007246
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14681 / 20000]
+		loss: 1.067363, lr: 0.002000 time: 5.282566, eta: 7:48:23
+		accuracy_cls: 0.903011
+		loss_cls: 0.273220, loss_bbox: 0.146798, loss_mask: 0.272102, loss_boundary: 0.291843
+		loss_rpn_cls: 0.036037, loss_rpn_bbox: 0.060703
+		loss_rpn_cls_fpn2: 0.018518, loss_rpn_cls_fpn3: 0.007725, loss_rpn_cls_fpn4: 0.004584, loss_rpn_cls_fpn5: 0.003333, loss_rpn_cls_fpn6: 0.000720
+		loss_rpn_bbox_fpn2: 0.030703, loss_rpn_bbox_fpn3: 0.008438, loss_rpn_bbox_fpn4: 0.005356, loss_rpn_bbox_fpn5: 0.003750, loss_rpn_bbox_fpn6: 0.008649
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14701 / 20000]
+		loss: 1.096828, lr: 0.002000 time: 5.283167, eta: 7:46:40
+		accuracy_cls: 0.895969
+		loss_cls: 0.289913, loss_bbox: 0.150420, loss_mask: 0.280439, loss_boundary: 0.296360
+		loss_rpn_cls: 0.029719, loss_rpn_bbox: 0.051461
+		loss_rpn_cls_fpn2: 0.012958, loss_rpn_cls_fpn3: 0.006850, loss_rpn_cls_fpn4: 0.004526, loss_rpn_cls_fpn5: 0.003054, loss_rpn_cls_fpn6: 0.000938
+		loss_rpn_bbox_fpn2: 0.020242, loss_rpn_bbox_fpn3: 0.005712, loss_rpn_bbox_fpn4: 0.005768, loss_rpn_bbox_fpn5: 0.004873, loss_rpn_bbox_fpn6: 0.010116
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14721 / 20000]
+		loss: 1.124668, lr: 0.002000 time: 5.284032, eta: 7:44:59
+		accuracy_cls: 0.893310
+		loss_cls: 0.300220, loss_bbox: 0.148721, loss_mask: 0.278746, loss_boundary: 0.299038
+		loss_rpn_cls: 0.036954, loss_rpn_bbox: 0.056342
+		loss_rpn_cls_fpn2: 0.016436, loss_rpn_cls_fpn3: 0.008786, loss_rpn_cls_fpn4: 0.006285, loss_rpn_cls_fpn5: 0.003281, loss_rpn_cls_fpn6: 0.000740
+		loss_rpn_bbox_fpn2: 0.026004, loss_rpn_bbox_fpn3: 0.006439, loss_rpn_bbox_fpn4: 0.006098, loss_rpn_bbox_fpn5: 0.005420, loss_rpn_bbox_fpn6: 0.007844
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14741 / 20000]
+		loss: 1.033013, lr: 0.002000 time: 5.284391, eta: 7:43:15
+		accuracy_cls: 0.906001
+		loss_cls: 0.262019, loss_bbox: 0.135090, loss_mask: 0.275843, loss_boundary: 0.298980
+		loss_rpn_cls: 0.029954, loss_rpn_bbox: 0.060726
+		loss_rpn_cls_fpn2: 0.014844, loss_rpn_cls_fpn3: 0.006300, loss_rpn_cls_fpn4: 0.004548, loss_rpn_cls_fpn5: 0.003612, loss_rpn_cls_fpn6: 0.000787
+		loss_rpn_bbox_fpn2: 0.030753, loss_rpn_bbox_fpn3: 0.005222, loss_rpn_bbox_fpn4: 0.004622, loss_rpn_bbox_fpn5: 0.003510, loss_rpn_bbox_fpn6: 0.007465
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14761 / 20000]
+		loss: 1.100847, lr: 0.002000 time: 5.284999, eta: 7:41:33
+		accuracy_cls: 0.907770
+		loss_cls: 0.267288, loss_bbox: 0.139133, loss_mask: 0.278595, loss_boundary: 0.300473
+		loss_rpn_cls: 0.034964, loss_rpn_bbox: 0.050052
+		loss_rpn_cls_fpn2: 0.018583, loss_rpn_cls_fpn3: 0.006893, loss_rpn_cls_fpn4: 0.003899, loss_rpn_cls_fpn5: 0.002408, loss_rpn_cls_fpn6: 0.000582
+		loss_rpn_bbox_fpn2: 0.027290, loss_rpn_bbox_fpn3: 0.006873, loss_rpn_bbox_fpn4: 0.004638, loss_rpn_bbox_fpn5: 0.003478, loss_rpn_bbox_fpn6: 0.006636
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14781 / 20000]
+		loss: 1.069637, lr: 0.002000 time: 5.285734, eta: 7:39:51
+		accuracy_cls: 0.904961
+		loss_cls: 0.278572, loss_bbox: 0.134569, loss_mask: 0.274712, loss_boundary: 0.300345
+		loss_rpn_cls: 0.034583, loss_rpn_bbox: 0.050136
+		loss_rpn_cls_fpn2: 0.016861, loss_rpn_cls_fpn3: 0.008886, loss_rpn_cls_fpn4: 0.006140, loss_rpn_cls_fpn5: 0.003646, loss_rpn_cls_fpn6: 0.000842
+		loss_rpn_bbox_fpn2: 0.021076, loss_rpn_bbox_fpn3: 0.006904, loss_rpn_bbox_fpn4: 0.006672, loss_rpn_bbox_fpn5: 0.003479, loss_rpn_bbox_fpn6: 0.009156
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14801 / 20000]
+		loss: 1.064700, lr: 0.002000 time: 5.286535, eta: 7:38:09
+		accuracy_cls: 0.901051
+		loss_cls: 0.285804, loss_bbox: 0.146803, loss_mask: 0.260861, loss_boundary: 0.289250
+		loss_rpn_cls: 0.033113, loss_rpn_bbox: 0.045351
+		loss_rpn_cls_fpn2: 0.016324, loss_rpn_cls_fpn3: 0.007782, loss_rpn_cls_fpn4: 0.004977, loss_rpn_cls_fpn5: 0.002940, loss_rpn_cls_fpn6: 0.000439
+		loss_rpn_bbox_fpn2: 0.019748, loss_rpn_bbox_fpn3: 0.005949, loss_rpn_bbox_fpn4: 0.003620, loss_rpn_bbox_fpn5: 0.003720, loss_rpn_bbox_fpn6: 0.006609
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14821 / 20000]
+		loss: 1.052440, lr: 0.002000 time: 5.287200, eta: 7:36:27
+		accuracy_cls: 0.908542
+		loss_cls: 0.271168, loss_bbox: 0.142298, loss_mask: 0.264103, loss_boundary: 0.285614
+		loss_rpn_cls: 0.031696, loss_rpn_bbox: 0.057285
+		loss_rpn_cls_fpn2: 0.014777, loss_rpn_cls_fpn3: 0.007064, loss_rpn_cls_fpn4: 0.004422, loss_rpn_cls_fpn5: 0.003390, loss_rpn_cls_fpn6: 0.000744
+		loss_rpn_bbox_fpn2: 0.020549, loss_rpn_bbox_fpn3: 0.006478, loss_rpn_bbox_fpn4: 0.006250, loss_rpn_bbox_fpn5: 0.004590, loss_rpn_bbox_fpn6: 0.010242
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14841 / 20000]
+		loss: 1.016780, lr: 0.002000 time: 5.287575, eta: 7:34:43
+		accuracy_cls: 0.913735
+		loss_cls: 0.246089, loss_bbox: 0.130975, loss_mask: 0.265221, loss_boundary: 0.291462
+		loss_rpn_cls: 0.030604, loss_rpn_bbox: 0.044201
+		loss_rpn_cls_fpn2: 0.013500, loss_rpn_cls_fpn3: 0.007429, loss_rpn_cls_fpn4: 0.004579, loss_rpn_cls_fpn5: 0.002743, loss_rpn_cls_fpn6: 0.000709
+		loss_rpn_bbox_fpn2: 0.018230, loss_rpn_bbox_fpn3: 0.005476, loss_rpn_bbox_fpn4: 0.005138, loss_rpn_bbox_fpn5: 0.003944, loss_rpn_bbox_fpn6: 0.007378
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14861 / 20000]
+		loss: 1.081631, lr: 0.002000 time: 5.288231, eta: 7:33:01
+		accuracy_cls: 0.903566
+		loss_cls: 0.279023, loss_bbox: 0.130371, loss_mask: 0.267221, loss_boundary: 0.289683
+		loss_rpn_cls: 0.029285, loss_rpn_bbox: 0.051726
+		loss_rpn_cls_fpn2: 0.012217, loss_rpn_cls_fpn3: 0.007357, loss_rpn_cls_fpn4: 0.004765, loss_rpn_cls_fpn5: 0.003376, loss_rpn_cls_fpn6: 0.000609
+		loss_rpn_bbox_fpn2: 0.028074, loss_rpn_bbox_fpn3: 0.005429, loss_rpn_bbox_fpn4: 0.005237, loss_rpn_bbox_fpn5: 0.003904, loss_rpn_bbox_fpn6: 0.010951
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14881 / 20000]
+		loss: 1.127499, lr: 0.002000 time: 5.288682, eta: 7:31:18
+		accuracy_cls: 0.901828
+		loss_cls: 0.277442, loss_bbox: 0.146760, loss_mask: 0.289178, loss_boundary: 0.307608
+		loss_rpn_cls: 0.037294, loss_rpn_bbox: 0.059347
+		loss_rpn_cls_fpn2: 0.017846, loss_rpn_cls_fpn3: 0.007583, loss_rpn_cls_fpn4: 0.004773, loss_rpn_cls_fpn5: 0.003305, loss_rpn_cls_fpn6: 0.000584
+		loss_rpn_bbox_fpn2: 0.028692, loss_rpn_bbox_fpn3: 0.006177, loss_rpn_bbox_fpn4: 0.004077, loss_rpn_bbox_fpn5: 0.004139, loss_rpn_bbox_fpn6: 0.009253
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14901 / 20000]
+		loss: 0.999204, lr: 0.002000 time: 5.289107, eta: 7:29:34
+		accuracy_cls: 0.912554
+		loss_cls: 0.242455, loss_bbox: 0.120024, loss_mask: 0.260058, loss_boundary: 0.282897
+		loss_rpn_cls: 0.031301, loss_rpn_bbox: 0.045100
+		loss_rpn_cls_fpn2: 0.013503, loss_rpn_cls_fpn3: 0.006259, loss_rpn_cls_fpn4: 0.004792, loss_rpn_cls_fpn5: 0.002881, loss_rpn_cls_fpn6: 0.000915
+		loss_rpn_bbox_fpn2: 0.016793, loss_rpn_bbox_fpn3: 0.003908, loss_rpn_bbox_fpn4: 0.005221, loss_rpn_bbox_fpn5: 0.003548, loss_rpn_bbox_fpn6: 0.007881
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14921 / 20000]
+		loss: 1.010410, lr: 0.002000 time: 5.289756, eta: 7:27:51
+		accuracy_cls: 0.914578
+		loss_cls: 0.241116, loss_bbox: 0.126125, loss_mask: 0.265315, loss_boundary: 0.289772
+		loss_rpn_cls: 0.027314, loss_rpn_bbox: 0.054296
+		loss_rpn_cls_fpn2: 0.011652, loss_rpn_cls_fpn3: 0.005055, loss_rpn_cls_fpn4: 0.003499, loss_rpn_cls_fpn5: 0.003477, loss_rpn_cls_fpn6: 0.000994
+		loss_rpn_bbox_fpn2: 0.028220, loss_rpn_bbox_fpn3: 0.003958, loss_rpn_bbox_fpn4: 0.004499, loss_rpn_bbox_fpn5: 0.005150, loss_rpn_bbox_fpn6: 0.009030
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14941 / 20000]
+		loss: 0.952030, lr: 0.002000 time: 5.290348, eta: 7:26:09
+		accuracy_cls: 0.914723
+		loss_cls: 0.244322, loss_bbox: 0.114990, loss_mask: 0.257252, loss_boundary: 0.289878
+		loss_rpn_cls: 0.027788, loss_rpn_bbox: 0.040950
+		loss_rpn_cls_fpn2: 0.012309, loss_rpn_cls_fpn3: 0.005558, loss_rpn_cls_fpn4: 0.004260, loss_rpn_cls_fpn5: 0.003270, loss_rpn_cls_fpn6: 0.000651
+		loss_rpn_bbox_fpn2: 0.023000, loss_rpn_bbox_fpn3: 0.005353, loss_rpn_bbox_fpn4: 0.005092, loss_rpn_bbox_fpn5: 0.003441, loss_rpn_bbox_fpn6: 0.006694
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14961 / 20000]
+		loss: 1.033923, lr: 0.002000 time: 5.290840, eta: 7:24:25
+		accuracy_cls: 0.907939
+		loss_cls: 0.256052, loss_bbox: 0.131927, loss_mask: 0.256693, loss_boundary: 0.286030
+		loss_rpn_cls: 0.028696, loss_rpn_bbox: 0.056703
+		loss_rpn_cls_fpn2: 0.013104, loss_rpn_cls_fpn3: 0.005935, loss_rpn_cls_fpn4: 0.003961, loss_rpn_cls_fpn5: 0.003216, loss_rpn_cls_fpn6: 0.000831
+		loss_rpn_bbox_fpn2: 0.027708, loss_rpn_bbox_fpn3: 0.006196, loss_rpn_bbox_fpn4: 0.004563, loss_rpn_bbox_fpn5: 0.005014, loss_rpn_bbox_fpn6: 0.007271
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 14981 / 20000]
+		loss: 1.014737, lr: 0.002000 time: 5.291236, eta: 7:22:42
+		accuracy_cls: 0.911596
+		loss_cls: 0.242245, loss_bbox: 0.132240, loss_mask: 0.263921, loss_boundary: 0.291078
+		loss_rpn_cls: 0.026226, loss_rpn_bbox: 0.044223
+		loss_rpn_cls_fpn2: 0.010637, loss_rpn_cls_fpn3: 0.005824, loss_rpn_cls_fpn4: 0.003727, loss_rpn_cls_fpn5: 0.002887, loss_rpn_cls_fpn6: 0.000646
+		loss_rpn_bbox_fpn2: 0.019412, loss_rpn_bbox_fpn3: 0.004695, loss_rpn_bbox_fpn4: 0.004541, loss_rpn_bbox_fpn5: 0.003850, loss_rpn_bbox_fpn6: 0.006975
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15001 / 20000]
+		loss: 0.986337, lr: 0.002000 time: 5.291869, eta: 7:20:59
+		accuracy_cls: 0.913329
+		loss_cls: 0.243964, loss_bbox: 0.127008, loss_mask: 0.254539, loss_boundary: 0.286199
+		loss_rpn_cls: 0.026409, loss_rpn_bbox: 0.037245
+		loss_rpn_cls_fpn2: 0.013320, loss_rpn_cls_fpn3: 0.004624, loss_rpn_cls_fpn4: 0.004279, loss_rpn_cls_fpn5: 0.002635, loss_rpn_cls_fpn6: 0.000573
+		loss_rpn_bbox_fpn2: 0.014383, loss_rpn_bbox_fpn3: 0.003838, loss_rpn_bbox_fpn4: 0.004726, loss_rpn_bbox_fpn5: 0.004416, loss_rpn_bbox_fpn6: 0.007943
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15021 / 20000]
+		loss: 1.053093, lr: 0.002000 time: 5.292549, eta: 7:19:16
+		accuracy_cls: 0.909570
+		loss_cls: 0.261282, loss_bbox: 0.138435, loss_mask: 0.269921, loss_boundary: 0.294812
+		loss_rpn_cls: 0.026619, loss_rpn_bbox: 0.049035
+		loss_rpn_cls_fpn2: 0.011888, loss_rpn_cls_fpn3: 0.006726, loss_rpn_cls_fpn4: 0.004414, loss_rpn_cls_fpn5: 0.003149, loss_rpn_cls_fpn6: 0.000833
+		loss_rpn_bbox_fpn2: 0.021528, loss_rpn_bbox_fpn3: 0.006996, loss_rpn_bbox_fpn4: 0.004764, loss_rpn_bbox_fpn5: 0.004051, loss_rpn_bbox_fpn6: 0.006731
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15041 / 20000]
+		loss: 1.039500, lr: 0.002000 time: 5.293175, eta: 7:17:34
+		accuracy_cls: 0.908649
+		loss_cls: 0.260751, loss_bbox: 0.127895, loss_mask: 0.256615, loss_boundary: 0.284299
+		loss_rpn_cls: 0.030826, loss_rpn_bbox: 0.050257
+		loss_rpn_cls_fpn2: 0.012514, loss_rpn_cls_fpn3: 0.008080, loss_rpn_cls_fpn4: 0.004353, loss_rpn_cls_fpn5: 0.002889, loss_rpn_cls_fpn6: 0.000679
+		loss_rpn_bbox_fpn2: 0.022751, loss_rpn_bbox_fpn3: 0.006786, loss_rpn_bbox_fpn4: 0.005341, loss_rpn_bbox_fpn5: 0.003606, loss_rpn_bbox_fpn6: 0.008508
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15061 / 20000]
+		loss: 1.002865, lr: 0.002000 time: 5.293831, eta: 7:15:51
+		accuracy_cls: 0.913776
+		loss_cls: 0.237014, loss_bbox: 0.128190, loss_mask: 0.256408, loss_boundary: 0.286698
+		loss_rpn_cls: 0.023157, loss_rpn_bbox: 0.050069
+		loss_rpn_cls_fpn2: 0.011672, loss_rpn_cls_fpn3: 0.005122, loss_rpn_cls_fpn4: 0.002987, loss_rpn_cls_fpn5: 0.002493, loss_rpn_cls_fpn6: 0.000608
+		loss_rpn_bbox_fpn2: 0.026233, loss_rpn_bbox_fpn3: 0.005882, loss_rpn_bbox_fpn4: 0.004272, loss_rpn_bbox_fpn5: 0.004091, loss_rpn_bbox_fpn6: 0.007091
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15081 / 20000]
+		loss: 1.066215, lr: 0.002000 time: 5.294399, eta: 7:14:08
+		accuracy_cls: 0.898468
+		loss_cls: 0.273726, loss_bbox: 0.151693, loss_mask: 0.275054, loss_boundary: 0.290532
+		loss_rpn_cls: 0.026683, loss_rpn_bbox: 0.051704
+		loss_rpn_cls_fpn2: 0.013225, loss_rpn_cls_fpn3: 0.005678, loss_rpn_cls_fpn4: 0.003854, loss_rpn_cls_fpn5: 0.002743, loss_rpn_cls_fpn6: 0.000523
+		loss_rpn_bbox_fpn2: 0.023024, loss_rpn_bbox_fpn3: 0.005303, loss_rpn_bbox_fpn4: 0.005515, loss_rpn_bbox_fpn5: 0.003474, loss_rpn_bbox_fpn6: 0.007276
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15101 / 20000]
+		loss: 0.886218, lr: 0.002000 time: 5.294671, eta: 7:12:23
+		accuracy_cls: 0.927725
+		loss_cls: 0.204296, loss_bbox: 0.111762, loss_mask: 0.237889, loss_boundary: 0.271713
+		loss_rpn_cls: 0.023267, loss_rpn_bbox: 0.038417
+		loss_rpn_cls_fpn2: 0.010914, loss_rpn_cls_fpn3: 0.005385, loss_rpn_cls_fpn4: 0.003567, loss_rpn_cls_fpn5: 0.002375, loss_rpn_cls_fpn6: 0.000746
+		loss_rpn_bbox_fpn2: 0.014799, loss_rpn_bbox_fpn3: 0.005918, loss_rpn_bbox_fpn4: 0.003983, loss_rpn_bbox_fpn5: 0.004028, loss_rpn_bbox_fpn6: 0.006997
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15121 / 20000]
+		loss: 1.059496, lr: 0.002000 time: 5.295528, eta: 7:10:42
+		accuracy_cls: 0.904705
+		loss_cls: 0.269222, loss_bbox: 0.135632, loss_mask: 0.268375, loss_boundary: 0.295226
+		loss_rpn_cls: 0.027628, loss_rpn_bbox: 0.056542
+		loss_rpn_cls_fpn2: 0.012141, loss_rpn_cls_fpn3: 0.005796, loss_rpn_cls_fpn4: 0.004067, loss_rpn_cls_fpn5: 0.003338, loss_rpn_cls_fpn6: 0.000709
+		loss_rpn_bbox_fpn2: 0.020332, loss_rpn_bbox_fpn3: 0.005831, loss_rpn_bbox_fpn4: 0.005698, loss_rpn_bbox_fpn5: 0.004531, loss_rpn_bbox_fpn6: 0.008013
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15141 / 20000]
+		loss: 0.935709, lr: 0.002000 time: 5.295933, eta: 7:08:58
+		accuracy_cls: 0.921781
+		loss_cls: 0.218586, loss_bbox: 0.114388, loss_mask: 0.257180, loss_boundary: 0.276772
+		loss_rpn_cls: 0.021737, loss_rpn_bbox: 0.045664
+		loss_rpn_cls_fpn2: 0.010055, loss_rpn_cls_fpn3: 0.005088, loss_rpn_cls_fpn4: 0.003569, loss_rpn_cls_fpn5: 0.002934, loss_rpn_cls_fpn6: 0.000772
+		loss_rpn_bbox_fpn2: 0.017711, loss_rpn_bbox_fpn3: 0.003845, loss_rpn_bbox_fpn4: 0.004056, loss_rpn_bbox_fpn5: 0.004211, loss_rpn_bbox_fpn6: 0.009570Process Process-21:
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 354, in main
+    input_data = next(dataiterator)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 269, in __next__
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 59, in _worker_loop
+    data_queue.put((idx, samples))
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/queues.py", line 347, in put
+    self._writer.send_bytes(obj)
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/connection.py", line 398, in _send_bytes
+    self._send(buf)
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+KeyboardInterrupt
+Process Process-22:
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 354, in main
+    input_data = next(dataiterator)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 269, in __next__
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 59, in _worker_loop
+    data_queue.put((idx, samples))
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/queues.py", line 346, in put
+    with self._wlock:
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/synchronize.py", line 96, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process Process-23:
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 354, in main
+    input_data = next(dataiterator)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 269, in __next__
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 59, in _worker_loop
+    data_queue.put((idx, samples))
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/queues.py", line 346, in put
+    with self._wlock:
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/synchronize.py", line 96, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process Process-24:
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 354, in main
+    input_data = next(dataiterator)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 269, in __next__
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 59, in _worker_loop
+    data_queue.put((idx, samples))
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/queues.py", line 346, in put
+    with self._wlock:
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/synchronize.py", line 96, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15161 / 20000]
+		loss: 1.018302, lr: 0.002000 time: 5.296518, eta: 7:07:15
+		accuracy_cls: 0.908753
+		loss_cls: 0.260838, loss_bbox: 0.131170, loss_mask: 0.258783, loss_boundary: 0.281409
+		loss_rpn_cls: 0.026648, loss_rpn_bbox: 0.049177
+		loss_rpn_cls_fpn2: 0.011124, loss_rpn_cls_fpn3: 0.005456, loss_rpn_cls_fpn4: 0.003773, loss_rpn_cls_fpn5: 0.003833, loss_rpn_cls_fpn6: 0.001322
+		loss_rpn_bbox_fpn2: 0.018245, loss_rpn_bbox_fpn3: 0.005638, loss_rpn_bbox_fpn4: 0.004701, loss_rpn_bbox_fpn5: 0.004751, loss_rpn_bbox_fpn6: 0.008927
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15181 / 20000]
+		loss: 1.024500, lr: 0.002000 time: 5.297237, eta: 7:05:32
+		accuracy_cls: 0.911631
+		loss_cls: 0.240839, loss_bbox: 0.140092, loss_mask: 0.265248, loss_boundary: 0.291795
+		loss_rpn_cls: 0.025062, loss_rpn_bbox: 0.047302
+		loss_rpn_cls_fpn2: 0.009861, loss_rpn_cls_fpn3: 0.005942, loss_rpn_cls_fpn4: 0.003883, loss_rpn_cls_fpn5: 0.003062, loss_rpn_cls_fpn6: 0.000853
+		loss_rpn_bbox_fpn2: 0.024551, loss_rpn_bbox_fpn3: 0.005094, loss_rpn_bbox_fpn4: 0.005482, loss_rpn_bbox_fpn5: 0.003422, loss_rpn_bbox_fpn6: 0.008180
+[May28-22-24-30_ts-244_step][boundary_e2e_mask_rcnn_R-50-FPN_1x_mini_traincoco2014_0.2.yaml][Step 15201 / 20000]
+		loss: 1.073017, lr: 0.002000 time: 5.297940, eta: 7:03:50
+		accuracy_cls: 0.906983
+		loss_cls: 0.253379, loss_bbox: 0.135372, loss_mask: 0.269527, loss_boundary: 0.300041
+		loss_rpn_cls: 0.029940, loss_rpn_bbox: 0.053856
+		loss_rpn_cls_fpn2: 0.014071, loss_rpn_cls_fpn3: 0.007292, loss_rpn_cls_fpn4: 0.004432, loss_rpn_cls_fpn5: 0.002709, loss_rpn_cls_fpn6: 0.000658
+		loss_rpn_bbox_fpn2: 0.025574, loss_rpn_bbox_fpn3: 0.007762, loss_rpn_bbox_fpn4: 0.006727, loss_rpn_bbox_fpn5: 0.003673, loss_rpn_bbox_fpn6: 0.006381
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 367, in main
+    net_outputs = maskRCNN(**input_data)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 357, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/qh/code/mask-rcnn.pytorch_v0/lib/nn/parallel/data_parallel.py", line 111, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/qh/code/mask-rcnn.pytorch_v0/lib/nn/parallel/data_parallel.py", line 139, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/qh/code/mask-rcnn.pytorch_v0/lib/nn/parallel/parallel_apply.py", line 59, in parallel_apply
+    thread.join()
+  File "/home/qh/anaconda3/lib/python3.6/threading.py", line 1056, in join
+    self._wait_for_tstate_lock()
+  File "/home/qh/anaconda3/lib/python3.6/threading.py", line 1072, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+
+Save on exception
+Traceback (most recent call last):
+  File "tools/train_net_step.py", line 400, in <module>
+    main()
+  File "tools/train_net_step.py", line 393, in main
+    save_ckpt(output_dir, args, step, train_size, maskRCNN, optimizer)
+  File "tools/train_net_step.py", line 133, in save_ckpt
+    'optimizer': optimizer.state_dict()}, save_name)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/serialization.py", line 135, in save
+    return _with_file_like(f, "wb", lambda f: _save(obj, f, pickle_module, pickle_protocol))
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/serialization.py", line 117, in _with_file_like
+    return body(f)
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/serialization.py", line 135, in <lambda>
+    return _with_file_like(f, "wb", lambda f: _save(obj, f, pickle_module, pickle_protocol))
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/serialization.py", line 204, in _save
+    serialized_storages[key]._write_file(f)
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/home/qh/anaconda3/lib/python3.6/threading.py'>
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/threading.py", line 1294, in _shutdown
+    t.join()
+  File "/home/qh/anaconda3/lib/python3.6/threading.py", line 1056, in join
+    self._wait_for_tstate_lock()
+  File "/home/qh/anaconda3/lib/python3.6/threading.py", line 1072, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+  File "/home/qh/anaconda3/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 173, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 17392) exited unexpectedly with exit code 1.
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/qh/anaconda3/lib/python3.6/multiprocessing/popen_fork.py", line 35, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt

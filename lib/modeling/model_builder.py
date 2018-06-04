@@ -195,7 +195,7 @@ class Generalized_RCNN(nn.Module):
                 loss_mask = mask_rcnn_heads.mask_rcnn_losses(mask_pred, rpn_ret['masks_int32'])
                 return_dict['losses']['loss_mask'] = loss_mask
                 if cfg.MODEL.BOUNDARY_ON:
-                    loss_boundary = mask_rcnn_heads.mask_rcnn_losses(boundary_pred, rpn_ret['boundary_int32'])
+                    loss_boundary = mask_rcnn_heads.mask_rcnn_losses_balanced(boundary_pred, rpn_ret['boundary_int32'])
                     return_dict['losses']['loss_boundary'] = loss_boundary
 
             if cfg.MODEL.KEYPOINTS_ON:

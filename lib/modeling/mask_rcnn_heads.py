@@ -113,8 +113,8 @@ def mask_rcnn_losses_balanced(masks_pred, masks_int32):
         num_labels_neg = torch.sum(neg_w)
         num_total = num_labels_pos + num_labels_neg
 
-        pos_w *= num_labels_pos / num_total
-        neg_w *= num_labels_neg / num_total
+        pos_w *= num_labels_neg / num_total
+        neg_w *= num_labels_pos / num_total
         weight[i] = (neg_w + pos_w) * weight[i]
 
     loss = F.binary_cross_entropy_with_logits(
